@@ -1,5 +1,4 @@
 # Make sure pip installer is updated to latest version in order to run.
-
 from kivymd.app import MDApp
 from kivy.core.window import Window
 from kivy.lang import Builder
@@ -15,16 +14,38 @@ Builder.load_string("""
         orientation: 'vertical'
         MDToolbar:
             title: 'vitaly540@gmail.com'
+            left_action_items: [["account-circle"]]
             right_action_items: [["dots-vertical"]]
             md_bg_color: app.theme_cls.bg_light
-            left_action_items: [["menu"]]
-            specific_text_color: (0, 0, 0, 1)
-            elevation: 5
+            specific_text_color: (0,0,0,1)
+            elevation: 0
+        MDLabel:
+            text: 'Home'
+            halign: 'left'
+            padding_x: '12dp'
+            padding_y: '12dp'
+            adaptive_size: True 
+            text_color: (0,0,0,1)
+            font_style: 'H4'
         Button:
-            text: 'Progress'
+            text: 'Workout 1'
             on_press: root.manager.current = 'settings'
         Button:
-            text: 'Quit'
+            text: 'Workout 2'
+            on_press: root.manager.current = 'settings'  
+        Button:
+            text: 'Workout 3'
+
+        MDBottomAppBar:
+            md_bg_color: 1, 1, 1, 1
+
+            MDToolbar:
+                icon: "plus"
+                type: "bottom"
+                icon_color: 0, 0, 0, 1
+                mode: "end"
+                
+                
 
 <SettingsScreen>:
     BoxLayout:
