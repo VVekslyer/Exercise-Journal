@@ -1,29 +1,58 @@
-# In order to run the app, make sure that pip is updated in the Shell console.
-# Type in "pip install --upgrade pip" and Enter in the Shell console.
+# Make sure pip installer is updated to latest version in order to run.
 
 from kivymd.app import MDApp
-from kivymd.uix.screen import Screen
+from kivy.core.window import Window
 from kivy.lang import Builder
+from kivy.uix.screenmanager import ScreenManager, Screen
+from kivy.config import Config
+Config.set('graphics', 'resizable', False)
+Window.size = (410, 730)
 
-ui = """
-Screen:
+
+Builder.load_string("""
+<MenuScreen>:
     BoxLayout:
         orientation: 'vertical'
         MDToolbar:
             title: 'vitaly540@gmail.com'
-        MDLabel:
-            text: 'Hello, world!'
+            right_action_items: [["dots-vertical"]]
+            md_bg_color: app.theme_cls.bg_light
+            left_action_items: [["menu"]]
+            specific_text_color: (0, 0, 0, 1)
+            elevation: 5
+        Button:
+            text: 'Progress'
+            on_press: root.manager.current = 'settings'
+        Button:
+            text: 'Quit'
 
-"""
+<SettingsScreen>:
+    BoxLayout:
+        Button:
+            text: 'My settings button'
+        Button:
+            text: 'Back to menu'
+            on_press: root.manager.current = 'menu'
+""")
 
-class Main(MDApp):
+# Declare both screens
+class MenuScreen(Screen):
+    pass
+
+class SettingsScreen(Screen):
+    pass
+
+class TestApp(MDApp):
+
     def build(self):
-        screen = Builder.load_string(ui)
-        return screen
+        # Create the screen manager
+        sm = ScreenManager()
+        sm.add_widget(MenuScreen(name='menu'))
+        sm.add_widget(SettingsScreen(name='settings'))
+        # App Theme
+        
 
+        return sm
 
-# Here our class is initialized
-# and its run() method is called.
-# This starts our Kivy app.
 if __name__ == '__main__':
-  Main().run()
+    TestApp().run()
