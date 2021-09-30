@@ -4,7 +4,6 @@ from kivy.core.window import Window
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.config import Config
-from kivy.clock import Clock
 Config.set('graphics', 'resizable', False)
 Window.size = (410, 730)
 
@@ -113,10 +112,6 @@ Builder.load_string("""
 class HomeScreen(Screen):
     def __init__(self, **kw):
         super().__init__(**kw)
-        #Clock.schedule_once(self.set_toolbar_font_name)
-
-    def set_toolbar_font_name(self, *args):
-        self.ids.toolbar.ids.label_title.font_name = "assets/fonts/Inter-Medium.ttf"
 
 class SettingsScreen(Screen):
     pass
@@ -133,8 +128,6 @@ class App(MDApp):
         sm = ScreenManager()
         sm.add_widget(HomeScreen(name='home'))
         sm.add_widget(SettingsScreen(name='settings'))
-        
-        
 
         return sm
 
