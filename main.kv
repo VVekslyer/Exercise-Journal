@@ -1,4 +1,46 @@
-<Layout>
+<HomeScreen>:
     BoxLayout:
-        orientation: "vertical"
-        size: root.width, root.height
+        orientation: 'vertical'
+        MDToolbar:
+            title: 'Vitaliy Vekslyer'
+            left_action_items: [["account-circle"]]
+            right_action_items: [["dots-vertical"]]
+            md_bg_color: app.theme_cls.bg_light
+            specific_text_color: (0,0,0,1)
+            elevation: 0
+        MDLabel:
+            text: 'Home'
+            halign: 'left'
+            padding_x: '12dp'
+            padding_y: '12dp'
+            adaptive_size: True 
+            text_color: (0,0,0,1)
+            font_style: 'H4'
+            font_name: 'assets/fonts/Inter-Medium.ttf'
+        Button:
+            text: 'Workout 1'
+            on_press: root.manager.current = 'settings'
+        Button:
+            text: 'Workout 2'
+            on_press: root.manager.current = 'settings'  
+        Button:
+            text: 'Workout 3'
+
+        MDBottomAppBar:
+            md_bg_color: 1, 1, 1, 1
+
+            MDToolbar:
+                icon: "plus"
+                type: "bottom"
+                icon_color: 0, 0, 0, 1
+                mode: "end"
+                
+                
+
+<SettingsScreen>:
+    BoxLayout:
+        Button:
+            text: 'My settings button'
+        Button:
+            text: 'Back to home'
+            on_press: root.manager.current = 'home'
