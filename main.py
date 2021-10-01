@@ -3,7 +3,9 @@ from kivymd.app import MDApp
 from kivy.core.window import Window
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
+from kivymd.uix.button import MDFloatingActionButtonSpeedDial
 from kivy.config import Config
+from widgets import workout
 Config.set('graphics', 'resizable', False)
 Window.size = (410, 730)
 
@@ -36,19 +38,12 @@ Builder.load_string("""
                         text_size: self.size
                         valign: 'top'
                         halign: 'left'
-                        markup: True
                         padding_x: '24dp'
                         padding_y: '12dp'
                         text_color: (0,0,0,1)
                         font_style: 'H4'
                         font_name: 'assets/fonts/Inter-SemiBold.ttf'
-                    MDFloatingActionButtonSpeedDial:
-                        rotation_root_button: True
-                        data: app.data
-                        bg_color_root_button: (0,0,0,1)
-                        bg_color_stack_button: (0,0,0,1)
-                        bg_color_stack_label: (0,0,0,1)
-                        bg_hint_color: (0,0,0,1)
+                    FloatingPlusButton:
        
 
             MDBottomNavigationItem:
@@ -69,12 +64,24 @@ Builder.load_string("""
                         text_color: (0,0,0,1)
                         font_style: 'H4'
                         font_name: 'assets/fonts/Inter-SemiBold.ttf'
-                    MDFloatingActionButtonSpeedDial:
-                        rotation_root_button: True
-                        data: app.data
-                        bg_color_root_button: (0,0,0,1)
-                        bg_color_stack_button: (0,0,0,1)
-                        label_text_color: (1,1,1,1)
+                    WorkoutItem:
+                        MDLabel:
+                            text: "LEGS"
+                            text_size: self.size
+                            font_style: 'H5'
+                            color: (1,1,1,1)
+                            font_name: 'assets/fonts/Inter-SemiBold.ttf'
+                            valign: 'top'
+                    WorkoutItem:
+                        MDLabel:
+                            text: "FULL BODY"
+                            text_size: self.size
+                            font_style: 'H5'
+                            color: (1,1,1,1)
+                            font_name: 'assets/fonts/Inter-SemiBold.ttf'
+                            valign: 'top'
+
+                    FloatingPlusButton:
 
             MDBottomNavigationItem:
                 name: "screen 3"
@@ -96,16 +103,6 @@ Builder.load_string("""
                         font_name: 'assets/fonts/Inter-SemiBold.ttf'
 
                 
-                
-                
-
-<SettingsScreen>:
-    BoxLayout:
-        Button:
-            text: 'My settings button'
-        Button:
-            text: 'Back to home'
-            on_press: root.manager.current = 'home'
 """)
 
 # Declare both screens
@@ -116,9 +113,22 @@ class HomeScreen(Screen):
 class SettingsScreen(Screen):
     pass
 
+class FloatingPlusButton(MDFloatingActionButtonSpeedDial):
+    def __init__(self, **kwargs):
+        super(FloatingPlusButton, self).__init__(**kwargs)
+
+        self.rotation_root_button = True
+        self.data = App.options
+        self.bg_color_root_button =  (0,0,0,1)
+        self.bg_color_stack_button = (0,0,0,1)
+        self.text_color = (1,1,1,1)
+
+
+
+
 class App(MDApp):
 
-    data = {
+    options = {
             'Recommendations' : 'star',
             'Create workout' : 'lightning-bolt'
         }
