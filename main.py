@@ -16,11 +16,6 @@ class SettingsScreen(Screen):
 
 class App(MDApp):
     Window.size = (410, 730)
-
-    options = {
-            'Recommendations' : 'star',
-            'Create workout' : 'lightning-bolt'
-        }
     
     def build(self):
         # Create the screen manager
