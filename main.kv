@@ -1,3 +1,6 @@
+#: import FloatingPlusButton widgets.FloatingPlusButton
+#: import WorkoutItem widgets.WorkoutItem
+
 <HomeScreen>:
     BoxLayout:
         orientation: 'vertical'
@@ -54,7 +57,8 @@
                         font_name: 'assets/fonts/Inter-SemiBold.ttf'
                     WorkoutItem:
                         MDLabel:
-                            text: "LEGS"
+                            text: "[font_features= letter-spacing: 2px ]LEGS[/font_features]"
+                            markup: True
                             text_size: self.size
                             font_style: 'H5'
                             color: (1,1,1,1)
@@ -63,6 +67,7 @@
                     WorkoutItem:
                         MDLabel:
                             text: "FULL BODY"
+                            markup: True
                             text_size: self.size
                             font_style: 'H5'
                             color: (1,1,1,1)
