@@ -16,6 +16,7 @@ class SettingsScreen(Screen):
 
 class App(MDApp):
     Window.size = (410, 730)
+    user_name = 'Myungsan'
     
     def build(self):
         # Create the screen manager
@@ -24,6 +25,9 @@ class App(MDApp):
         sm.add_widget(SettingsScreen(name='settings'))
 
         return sm
+    
+    def func(self):
+        print("pressed")
 
 if __name__ == '__main__':
     App().run()
