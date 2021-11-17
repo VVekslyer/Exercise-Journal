@@ -1,33 +1,109 @@
-# Make sure pip installer is updated to latest version in order to run.
 from kivymd.app import MDApp
 from kivy.core.window import Window
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
+from kivymd.uix.menu import MDDropdownMenu
+from kivy.metrics import dp
+from kivymd.uix.snackbar import Snackbar
+from user import User
+from kivymd.uix.button import MDFlatButton
+from kivymd.uix.dialog import MDDialog
+import sys
+sys.path.insert(0, '/widgets/')
+from widgets.SettingsScreen import SettingsScreen
 
-Builder.load_file('main.kv')
+Builder.load_file('widgets/main.kv')
 
 # Declare both screens
 class HomeScreen(Screen):
     def __init__(self, **kw):
         super().__init__(**kw)
 
-class SettingsScreen(Screen):
-    pass
 
 class App(MDApp):
     Window.size = (410, 730)
-    user_name = 'Myungsan'
-    
+    Window.set_title('Exercise Journal')
+    current_user = User('Vitaliy', 'vitaly540@gmail.com', 'Beginner')
+    user_name = current_user.name
+
     def build(self):
         # Create the screen manager
-        sm = ScreenManager()
-        sm.add_widget(HomeScreen(name='home'))
-        sm.add_widget(SettingsScreen(name='settings'))
+        self.sm = ScreenManager()
+        self.sm.add_widget(HomeScreen(name='home'))
+        self.sm.add_widget(SettingsScreen(name='settings'))
+        #self.sm.add_widget(UserSettings(name = 'UserSettings'))
+         #self.sm.add_widget(Feedback(name = 'Feedback'))
 
-        return sm
+        menu_names = [
+            "Settings", "User Settings", "Info and Feedback", "Log Out"
+        ]
+        triple_dots_menu_items = [{
+            "viewclass":
+            "OneLineListItem",
+            "text":
+            f"{i}",
+            "height":
+            dp(56),
+            "on_release":
+            lambda x=f"{i}": self.setting_pressed(x),
+        } for i in menu_names]
+
+        self.menu = MDDropdownMenu(
+            items=triple_dots_menu_items,
+            width_mult=4,
+        )
+
+        return self.sm
+
+    def callback(self, button):
+        self.menu.caller = button
+        self.menu.open()
+
+    def menu_callback(self, text_item):
+        self.menu.dismiss()
+        Snackbar(text=text_item).open()
+
+    def setting_pressed(self, text_item):
+        self.menu.dismiss()
+
+        if text_item == "Settings":
+            self.sm.transition.direction = 'left'
+            self.sm.current = 'settings'
+        elif text_item == "User Settings":
+            pass
+        elif text_item == "Info and Feedback":
+            pass
+        elif text_item == "Log Out":
+            self.show_logout_dialog()
+
+    def set_screen(self, button):
+        self.sm.transition.direction = 'right'
+        self.sm.current = 'home'
+
+    def show_logout_dialog(self, *args):
+        self.dialog = MDDialog(
+            text="Log out?",
+            buttons=[
+                MDFlatButton(
+                    text="YES",
+                    theme_text_color="Custom",
+                    text_color=(1, 0, 0, 1),
+                ),
+                MDFlatButton(
+                    text="NO",
+                    theme_text_color="Custom",
+                    text_color=(1, 0, 0, 1),
+                    on_release = self.dismiss_dialog,
+                ),
+            ],
+            radius=[20, 20, 20, 20],
+        )
+        self.dialog.open()
     
-    def func(self):
-        print("pressed")
+    def dismiss_dialog(self, *args):
+      self.dialog.dismiss(force=True)
+      self.sm.current = 'home'
+
 
 if __name__ == '__main__':
     App().run()
