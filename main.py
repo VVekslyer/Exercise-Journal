@@ -5,12 +5,15 @@ from kivy.uix.screenmanager import ScreenManager, Screen
 from kivymd.uix.menu import MDDropdownMenu
 from kivy.metrics import dp
 from kivymd.uix.snackbar import Snackbar
-from user import User
 from kivymd.uix.button import MDFlatButton
 from kivymd.uix.dialog import MDDialog
+
+
 import sys
 sys.path.insert(0, '/widgets/')
 from widgets.SettingsScreen import SettingsScreen
+from widgets.UserSettings import UserSettings
+from User import User
 
 Builder.load_file('widgets/main.kv')
 
@@ -31,11 +34,11 @@ class App(MDApp):
         self.sm = ScreenManager()
         self.sm.add_widget(HomeScreen(name='home'))
         self.sm.add_widget(SettingsScreen(name='settings'))
-        #self.sm.add_widget(UserSettings(name = 'UserSettings'))
-         #self.sm.add_widget(Feedback(name = 'Feedback'))
+        self.sm.add_widget(UserSettings(name = 'user-settings'))
+        #self.sm.add_widget(Feedback(name = 'Feedback'))
 
         menu_names = [
-            "Settings", "User Settings", "Info and Feedback", "Log Out"
+            "Settings","Info and Feedback", "Log Out"
         ]
         triple_dots_menu_items = [{
             "viewclass":
@@ -45,7 +48,7 @@ class App(MDApp):
             "height":
             dp(56),
             "on_release":
-            lambda x=f"{i}": self.setting_pressed(x),
+            lambda x=f"{i}": self.vertical_menu_item_pressed(x),
         } for i in menu_names]
 
         self.menu = MDDropdownMenu(
@@ -63,7 +66,7 @@ class App(MDApp):
         self.menu.dismiss()
         Snackbar(text=text_item).open()
 
-    def setting_pressed(self, text_item):
+    def vertical_menu_item_pressed(self, text_item):
         self.menu.dismiss()
 
         if text_item == "Settings":
@@ -101,8 +104,12 @@ class App(MDApp):
         self.dialog.open()
     
     def dismiss_dialog(self, *args):
-      self.dialog.dismiss(force=True)
-      self.sm.current = 'home'
+        self.dialog.dismiss(force=True)
+        self.sm.current = 'home'
+    
+    def set_user_settings_screen(self, *args):
+        self.sm.transition.direction = 'right'
+        self.sm.current = 'user-settings'
 
 
 if __name__ == '__main__':

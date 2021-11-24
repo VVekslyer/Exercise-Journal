@@ -1,26 +1,9 @@
 #: import FloatingPlusButton widgets.FloatingPlusButton
-#: import WorkoutItem widgets.WorkoutItem
 #: import Home widgets.Home
 #: import Workouts widgets.Workouts
-#: import Progress widgets.Progress
-
-<SettingsScreen>:
-    BoxLayout:
-        orientation: 'vertical'
-        MDToolbar:
-            title: "Settings"
-            font_name: 'assets/fonts/Inter-Medium.ttf'
-            left_action_items: [["arrow-left", lambda x : app.set_screen(x)]]
-            md_bg_color: app.theme_cls.bg_light
-            specific_text_color: (0,0,0,1)
-            icon_color: (0,1,0,1)
-            elevation: 0  
-        
-        MDBottomNavigation:
-
-
-            
-
+#: import Progress widgets.Progress 
+#: include widgets/SettingsScreen.kv
+#: include widgets/Home.kv
 
 <HomeScreen>:
     BoxLayout:
@@ -28,7 +11,7 @@
         MDToolbar:
             title: app.user_name
             font_name: 'assets/fonts/Inter-Medium.ttf'
-            left_action_items: [["account-circle"]]
+            left_action_items: [["account-circle", lambda x: app.set_user_settings_screen(x)]]
             right_action_items: [["dots-vertical", lambda x: app.callback(x)]]
             md_bg_color: app.theme_cls.bg_light
             specific_text_color: (0,0,0,1)
@@ -43,19 +26,7 @@
                 text: "Home"
                 icon: 'home'     
 
-                BoxLayout:
-                    orientation: 'vertical'
-                    MDLabel:
-                        text: 'Home'
-                        text_size: self.size
-                        valign: 'top'
-                        halign: 'left'
-                        padding_x: '24dp'
-                        padding_y: '12dp'
-                        text_color: (0,0,0,1)
-                        font_style: 'H4'
-                        font_name: 'assets/fonts/Inter-SemiBold.ttf'
-                    FloatingPlusButton:
+                Home:
        
 
             MDBottomNavigationItem:
@@ -76,24 +47,6 @@
                         text_color: (0,0,0,1)
                         font_style: 'H4'
                         font_name: 'assets/fonts/Inter-SemiBold.ttf'
-                    WorkoutItem:
-                        MDLabel:
-                            text: "[font_features= letter-spacing: 2px ]LEGS[/font_features]"
-                            markup: True
-                            text_size: self.size
-                            font_style: 'H5'
-                            color: (1,1,1,1)
-                            font_name: 'assets/fonts/Inter-SemiBold.ttf'
-                            valign: 'top'
-                    WorkoutItem:
-                        MDLabel:
-                            text: "FULL BODY"
-                            markup: True
-                            text_size: self.size
-                            font_style: 'H5'
-                            color: (1,1,1,1)
-                            font_name: 'assets/fonts/Inter-SemiBold.ttf'
-                            valign: 'top'
 
                     FloatingPlusButton:
 

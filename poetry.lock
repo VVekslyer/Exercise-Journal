@@ -64,6 +64,14 @@ optional = false
 python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
 
 [[package]]
+name = "django-user"
+version = "0.2.1"
+description = "Django User"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "docutils"
 version = "0.17.1"
 description = "Docutils -- Python Documentation Utilities"
@@ -386,7 +394,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytes
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "f06b9429ae38b4cf18291620f27a24dc12a8b90efc6ee6643d72312e1c555240"
+content-hash = "cbb29a890d1db428cd8dd34144d363c2086719fd21a197b84cd774010c858505"
 
 [metadata.files]
 brotli = [
@@ -555,6 +563,9 @@ cython = [
     {file = "Cython-0.29.24-py2.py3-none-any.whl", hash = "sha256:f96411f0120b5cae483923aaacd2872af8709be4b46522daedc32f051d778385"},
     {file = "Cython-0.29.24.tar.gz", hash = "sha256:cdf04d07c3600860e8c2ebaad4e8f52ac3feb212453c1764a49ac08c827e8443"},
 ]
+django-user = [
+    {file = "django-user-0.2.1.tar.gz", hash = "sha256:ab0e502d234b0369a69405ea082797e19e9853e82be1c9044799cc98e32b3bf3"},
+]
 docutils = [
     {file = "docutils-0.17.1-py2.py3-none-any.whl", hash = "sha256:cf316c8370a737a022b72b56874f6602acf974a37a9fba42ec2876387549fc61"},
     {file = "docutils-0.17.1.tar.gz", hash = "sha256:686577d2e4c32380bb50cbb22f575ed742d58168cee37e99117a854bcd88f125"},
@@ -598,6 +609,8 @@ kivy = [
     {file = "Kivy-2.0.0.tar.gz", hash = "sha256:d25e44eb44e43762b2fd0c5874e51954e0f1181fd9800d8a6756be6d084812d8"},
 ]
 "kivy-deps.angle" = [
+    {file = "kivy_deps.angle-0.3.0-cp310-cp310-win32.whl", hash = "sha256:7b56477c726e361592f794d49b2fdd96d579b7efd7225a8aadf7fd01d4e8cb80"},
+    {file = "kivy_deps.angle-0.3.0-cp310-cp310-win_amd64.whl", hash = "sha256:a4b78fd9d47c76e5ff52fcbaa040920a2f97bff038f4c534346dd833dc8f3145"},
     {file = "kivy_deps.angle-0.3.0-cp36-cp36m-win32.whl", hash = "sha256:a2cea09e8a5e899629466403fbd540459f1cdef8d08c6c479b6607b95309be02"},
     {file = "kivy_deps.angle-0.3.0-cp36-cp36m-win_amd64.whl", hash = "sha256:b167e19b3eea55a9a8c606a607bb909ec1bedda88deee40347c780b310155a79"},
     {file = "kivy_deps.angle-0.3.0-cp37-cp37m-win32.whl", hash = "sha256:d0e7b7b9eb9669837a5d70808a7ea45f2b61961b56f9f69a233bad6bd36ce260"},
@@ -608,6 +621,8 @@ kivy = [
     {file = "kivy_deps.angle-0.3.0-cp39-cp39-win_amd64.whl", hash = "sha256:bb4d53f15a093214adbbe205c108ede5cc0f6af6eff104c1b8c468ddaaf6400a"},
 ]
 "kivy-deps.glew" = [
+    {file = "kivy_deps.glew-0.3.0-cp310-cp310-win32.whl", hash = "sha256:ba7618c56d10745064bb953fd10957a9169c42a67d1d840773535a91b3dd82a4"},
+    {file = "kivy_deps.glew-0.3.0-cp310-cp310-win_amd64.whl", hash = "sha256:c2758ed67aeb5211d963aa6bd3078a72841080b95f17a5810c99af87c5433bf6"},
     {file = "kivy_deps.glew-0.3.0-cp36-cp36m-win32.whl", hash = "sha256:5a63e3dd0affef2613410fe5b9b8572f1932ae2285db60071446d62f37961825"},
     {file = "kivy_deps.glew-0.3.0-cp36-cp36m-win_amd64.whl", hash = "sha256:28aa195875a767314b12091842bdcf832401077f9e65dd9975059ddb978f2f75"},
     {file = "kivy_deps.glew-0.3.0-cp37-cp37m-win32.whl", hash = "sha256:6c941f321fa8fd34083054f74b9a810bc2a1f3e2560e4fa3df31995c9971f94a"},
