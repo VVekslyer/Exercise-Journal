@@ -7,12 +7,15 @@
             radius: [20,]
 
         MDLabel:
-            text: "Hello?"
+            text: str(Home.date(2021, 12, 20))
             font_style: "H5"
             size_hint_y: None
             height: self.texture_size[1]
-            pos_hint: {"top": 1,"center_x" : .5}
-            color: (1, 1, 1, 1)
+            padding_x: 25
+            y: root.height - dp(50)
+            color: (1, 1, 1, .8)
+            font_name: 'assets/fonts/Inter-SemiBold.ttf'
+        
 
 <Home>:
     BoxLayout:
@@ -29,8 +32,10 @@
             font_name: 'assets/fonts/Inter-SemiBold.ttf'
         MDSwiper:
             size_hint_y: None
-            height: root.height - dp(40)
-            y: root.height - self.height - dp(20)
+            height: root.height - dp(200)
+            y: root.height - self.height - dp(300)
+
+            # By default, there's three upcoming workouts displayed, user can readjust.
             WorkoutItem:
             WorkoutItem:
             WorkoutItem:

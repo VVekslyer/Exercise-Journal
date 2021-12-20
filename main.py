@@ -8,7 +8,7 @@ from kivymd.uix.snackbar import Snackbar
 from kivymd.uix.button import MDFlatButton
 from kivymd.uix.dialog import MDDialog
 
-
+# This allows us to import classes from other files in the project.
 import sys
 sys.path.insert(0, '/widgets/')
 from widgets.SettingsScreen import SettingsScreen
@@ -17,29 +17,58 @@ from User import User
 
 Builder.load_file('widgets/main.kv')
 
-# Declare both screens
+# Screen when starting the app for the first time.
+class StartingScreen(Screen):
+    def __init__(self, **kw):
+        super().__init__(**kw)
+
+# Login and sign up screen.
+class LoginScreen(Screen):
+    def __init__(self, **kw):
+        super().__init__(**kw)
+
+# Screen after an account has been created.
 class HomeScreen(Screen):
     def __init__(self, **kw):
         super().__init__(**kw)
 
 
+# intilize app.
 class App(MDApp):
     Window.size = (410, 730)
     Window.set_title('Exercise Journal')
-    current_user = User('Vitaliy', 'vitaly540@gmail.com', 'Beginner')
+    current_user = User('Vitaliy', 'vitaly540@gmail.com', 'Beginner') # User intilized
     user_name = current_user.name
 
     def build(self):
-        # Create the screen manager
+        # This next few lines intialize the screen manager.
+        # Our app is basically a collection of screens.
+        # The app can be structed as five seperate screens:
+        #
+        #             Starting Screen
+        #                    |
+        #                  Login
+        #                    |
+        #             ______App______
+        #            /       |       \
+        #          Home   Workouts  Stats
+        #                    
+        # You can set self.sm.current = 'start-screen' to see the starting screen.
         self.sm = ScreenManager()
+        self.sm.add_widget(StartingScreen(name='start-screen'))
+        self.sm.add_widget(LoginScreen(name='login'))
         self.sm.add_widget(HomeScreen(name='home'))
         self.sm.add_widget(SettingsScreen(name='settings'))
         self.sm.add_widget(UserSettings(name = 'user-settings'))
+        self.sm.current = 'home'
         #self.sm.add_widget(Feedback(name = 'Feedback'))
 
         menu_names = [
             "Settings","Info and Feedback", "Log Out"
         ]
+
+        self.nameBoxes = ["Today","Tomorrow","Day After"]
+        self.TitleCounter = 0
         triple_dots_menu_items = [{
             "viewclass":
             "OneLineListItem",
