@@ -7,20 +7,18 @@ from kivy.metrics import dp
 from kivymd.uix.snackbar import Snackbar
 from kivymd.uix.button import MDFlatButton
 from kivymd.uix.dialog import MDDialog
+from kivy.animation import Animation
 
 # This allows us to import classes from other files in the project.
 import sys
 sys.path.insert(0, '/widgets/')
+from widgets.StartingScreen import StartingScreen
 from widgets.SettingsScreen import SettingsScreen
 from widgets.UserSettings import UserSettings
 from User import User
 
 Builder.load_file('widgets/main.kv')
-
-# Screen when starting the app for the first time.
-class StartingScreen(Screen):
-    def __init__(self, **kw):
-        super().__init__(**kw)
+    
 
 # Login and sign up screen.
 class LoginScreen(Screen):
@@ -53,6 +51,7 @@ class App(MDApp):
         #            /       |       \
         #          Home   Workouts  Stats
         #                    
+        # You can set self.sm.current = 'home' to see the home screen.
         # You can set self.sm.current = 'start-screen' to see the starting screen.
         self.sm = ScreenManager()
         self.sm.add_widget(StartingScreen(name='start-screen'))
@@ -60,7 +59,14 @@ class App(MDApp):
         self.sm.add_widget(HomeScreen(name='home'))
         self.sm.add_widget(SettingsScreen(name='settings'))
         self.sm.add_widget(UserSettings(name = 'user-settings'))
-        self.sm.current = 'home'
+        self.sm.current = 'start-screen'
+
+        # App theme
+        if self.sm.current == 'start-screen':
+            self.theme_cls.theme_style = "Dark"
+        else:
+            self.theme_cls.theme_style = "Light"
+
         #self.sm.add_widget(Feedback(name = 'Feedback'))
 
         menu_names = [
@@ -110,7 +116,10 @@ class App(MDApp):
 
     def set_screen(self, button):
         self.sm.transition.direction = 'right'
-        self.sm.current = 'home'
+        if self.sm.current == 'start-screen':
+            self.theme_cls.theme_style = "Dark"
+        else:
+            self.theme_cls.theme_style = "Light"
 
     def show_logout_dialog(self, *args):
         self.dialog = MDDialog(

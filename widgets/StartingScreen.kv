@@ -1,8 +1,26 @@
+#: include widgets/AppButton.kv
+#: import StartingScreen widgets.StartingScreen
+
 <StartingScreen>: 
-        
     MDLabel:
-        text: "Welcome"
-        font_name: 'assets/fonts/Sofia-Pro-Semi-Bold.ttf'
-        font_style: 'H4'
+        text: "Welcome."
+        text_size: self.size
+        # 'assets/fonts/Inter-Medium.ttf'
+        # 'assets/fonts/Sofia-Pro-Semi-Bold.ttf'
+        font_style: 'H3'
         valign: 'middle'
         halign: 'center'
+        font_name: 'assets/fonts/Sofia-Pro-Semi-Bold.ttf'
+        on_touch_down: root.animate_text(self)
+
+    MDLabel:
+        markdown: True
+        text: "track your exercise progress for accountability."
+        text_size: self.size
+        # 'assets/fonts/Inter-Medium.ttf'
+        # 'assets/fonts/Sofia-Pro-Semi-Bold.ttf'
+        halign: 'center'
+        y: root.height - dp(200)
+        font_name: 'assets/fonts/Sofia-Pro-Light.ttf'
+        
+        

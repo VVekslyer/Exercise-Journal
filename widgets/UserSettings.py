@@ -1,4 +1,3 @@
-from kivy import *
 from kivy.uix.screenmanager import Screen
 
 class UserSettings(Screen):
