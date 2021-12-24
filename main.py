@@ -19,7 +19,6 @@ from User import User
 
 Builder.load_file('widgets/main.kv')
     
-
 # Login and sign up screen.
 class LoginScreen(Screen):
     def __init__(self, **kw):
@@ -31,17 +30,17 @@ class HomeScreen(Screen):
         super().__init__(**kw)
 
 
-# intilize app.
+# Initialize app.
 class App(MDApp):
     Window.size = (410, 730)
     Window.set_title('Exercise Journal')
-    current_user = User('Vitaliy', 'vitaly540@gmail.com', 'Beginner') # User intilized
+    current_user = User('Vitaliy', 'vitaly540@gmail.com', 'Beginner') # User initialized
     user_name = current_user.name
 
     def build(self):
-        # This next few lines intialize the screen manager.
+        # These next few lines initialize the screen manager.
         # Our app is basically a collection of screens.
-        # The app can be structed as five seperate screens:
+        # The app can be structured as five separate screens:
         #
         #             Starting Screen
         #                    |
