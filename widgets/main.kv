@@ -12,7 +12,7 @@
         MDToolbar:
             title: app.user_name
             font_name: 'assets/fonts/Inter-Medium.ttf'
-            left_action_items: [["account-circle", lambda x: app.set_user_settings_screen(x)]]
+            left_action_items: [["account-circle", lambda x: app.go_to_user_settings_screen(x)]]
             right_action_items: [["dots-vertical", lambda x: app.callback(x)]]
             md_bg_color: app.theme_cls.bg_light
             specific_text_color: (0,0,0,1)

@@ -7,12 +7,12 @@ from kivy.metrics import dp
 from kivymd.uix.snackbar import Snackbar
 from kivymd.uix.button import MDFlatButton
 from kivymd.uix.dialog import MDDialog
-from kivy.animation import Animation
 
 # This allows us to import classes from other files in the project.
 import sys
 sys.path.insert(0, '/widgets/')
 from widgets.StartingScreen import StartingScreen
+from widgets.SignUpWithEmail import SignUpWithEmail
 from widgets.SettingsScreen import SettingsScreen
 from widgets.UserSettings import UserSettings
 from User import User
@@ -54,19 +54,17 @@ class App(MDApp):
         # You can set self.sm.current = 'start-screen' to see the starting screen.
         self.sm = ScreenManager()
         self.sm.add_widget(StartingScreen(name='start-screen'))
+        self.sm.add_widget(SignUpWithEmail(name='signup-with-email'))
         self.sm.add_widget(LoginScreen(name='login'))
         self.sm.add_widget(HomeScreen(name='home'))
         self.sm.add_widget(SettingsScreen(name='settings'))
         self.sm.add_widget(UserSettings(name = 'user-settings'))
-        self.sm.current = 'start-screen'
+        #self.sm.add_widget(Feedback(name = 'Feedback'))
+        self.sm.current = 'signup-with-email'
 
         # App theme
-        if self.sm.current == 'start-screen':
-            self.theme_cls.theme_style = "Dark"
-        else:
-            self.theme_cls.theme_style = "Light"
-
-        #self.sm.add_widget(Feedback(name = 'Feedback'))
+        self.theme_cls.theme_style = "Light"
+        
 
         menu_names = [
             "Settings","Info and Feedback", "Log Out"
@@ -113,12 +111,18 @@ class App(MDApp):
         elif text_item == "Log Out":
             self.show_logout_dialog()
 
-    def set_screen(self, button):
+    # Transitions
+    def go_to_home(self, button):
+        self.sm.transition.direction = 'left'
+        self.sm.current = 'home'
+
+    def go_to_signup_with_email(self, button):
+        self.sm.transition.direction = 'left'
+        self.sm.current = 'signup-with-email'
+    
+    def go_to_user_settings_screen(self, *args):
         self.sm.transition.direction = 'right'
-        if self.sm.current == 'start-screen':
-            self.theme_cls.theme_style = "Dark"
-        else:
-            self.theme_cls.theme_style = "Light"
+        self.sm.current = 'user-settings'
 
     def show_logout_dialog(self, *args):
         self.dialog = MDDialog(
@@ -143,10 +147,6 @@ class App(MDApp):
     def dismiss_dialog(self, *args):
         self.dialog.dismiss(force=True)
         self.sm.current = 'home'
-    
-    def set_user_settings_screen(self, *args):
-        self.sm.transition.direction = 'right'
-        self.sm.current = 'user-settings'
 
 
 if __name__ == '__main__':
