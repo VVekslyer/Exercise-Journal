@@ -60,12 +60,11 @@ class App(MDApp):
         self.sm.add_widget(SettingsScreen(name='settings'))
         self.sm.add_widget(UserSettings(name = 'user-settings'))
         #self.sm.add_widget(Feedback(name = 'Feedback'))
-        self.sm.current = 'signup-with-email'
+        self.sm.current = 'start-screen'
 
         # App theme
         #self.theme_cls.theme_style = "Light"
         
-
         menu_names = [
             "Settings","Info and Feedback", "Log Out"
         ]
@@ -108,6 +107,14 @@ class App(MDApp):
             self.show_logout_dialog()
 
     # Transitions
+    def go_to(self, button, screen):
+        self.sm.transition.direction = 'left'
+        self.sm.current = screen
+
+    def go_back(self, button, screen):
+        self.sm.transition.direction = 'right'
+        self.sm.current = screen
+
     def go_to_home(self, button):
         self.sm.transition.direction = 'left'
         self.sm.current = 'home'
