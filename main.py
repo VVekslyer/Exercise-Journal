@@ -73,14 +73,10 @@ class App(MDApp):
         self.nameBoxes = ["Today","Tomorrow","Day After"]
         self.TitleCounter = 0
         triple_dots_menu_items = [{
-            "viewclass":
-            "OneLineListItem",
-            "text":
-            f"{i}",
-            "height":
-            dp(56),
-            "on_release":
-            lambda x=f"{i}": self.vertical_menu_item_pressed(x),
+            "viewclass": "OneLineListItem",
+            "text": f"{i}",
+            "height": dp(56),
+            "on_release": lambda x=f"{i}": self.vertical_menu_item_pressed(x),
         } for i in menu_names]
 
         self.menu = MDDropdownMenu(
