@@ -63,7 +63,7 @@ class App(MDApp):
         self.sm.current = 'signup-with-email'
 
         # App theme
-        self.theme_cls.theme_style = "Light"
+        #self.theme_cls.theme_style = "Light"
         
 
         menu_names = [
