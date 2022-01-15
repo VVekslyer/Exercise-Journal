@@ -3,8 +3,12 @@
 #: import Workouts widgets.Workouts
 #: import Progress widgets.Progress 
 #: import SignUpWithEmail widgets.SignUpWithEmail
+#: import WhatAreYourGoals widgets.WhatAreYourGoals
 #: include widgets/StartingScreen.kv
 #: include widgets/SignUpWithEmail.kv
+#: include widgets/WhatAreYourGoals.kv
+#: include widgets/WhatIsYourWeight.kv
+#: include widgets/WhatIsYourHeight.kv
 #: include widgets/SettingsScreen.kv
 #: include widgets/Home.kv
 
@@ -14,7 +18,7 @@
         MDToolbar:
             title: app.user_name
             font_name: 'assets/fonts/Inter-Medium.ttf'
-            left_action_items: [["account-circle", lambda x: app.go_to_user_settings_screen(x)]]
+            left_action_items: [["account-circle", lambda x: app.go_to(x, 'user-settings')]]
             right_action_items: [["dots-vertical", lambda x: app.callback(x)]]
             md_bg_color: app.theme_cls.bg_light
             specific_text_color: (0,0,0,1)

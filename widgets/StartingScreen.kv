@@ -2,24 +2,30 @@
     MDBoxLayout:
         orientation: 'vertical'
         md_bg_color: (0, 0, 0, 1)
+        size_hint:root.height,root.width
 
     MDLabel:
         text: "Welcome."
         text_size: self.size
         color: (1, 1, 1, 1)
         font_style: 'H3'
+        x: dp(55)
         y: root.height - dp(160)
-        halign: 'center'
+        halign: 'left'
         font_name: 'assets/fonts/Sofia-Pro-Semi-Bold.ttf'
+        font_size: '40sp'
         #on_touch_down: root.move_text_upwards(self)
 
     MDLabel:
         markdown: True
-        text: "track your exercise progress for accountability."
+        text: " \ntrack your exercise \nprogress for accountability."
         text_size: self.size
         color: (1, 1, 1, 1)
-        halign: 'center'
-        y: root.height - dp(210)
+        halign: 'left'
+        y: root.height - dp(220)
+        x: dp(55)
+        line_height: 1.5
+        font_size: "18sp"
         font_name: 'assets/fonts/Sofia-Pro-Light.ttf'
     
     MDFillRoundFlatButton:
@@ -42,7 +48,7 @@
     
     MDFillRoundFlatIconButton:
         icon: "google"
-        text: "         Log in with Google" # idk how else to center this lmao ¯\_(ツ)_/¯
+        text: "         Log in with Google" # idk how else to center this ¯\_(ツ)_/¯
         text_color: 1, 1, 1, 1
         md_bg_color: 0.27, 0.42, 0.93, 1
         size_hint: 0.8, 0.07
@@ -55,6 +61,7 @@
         text: "Or Log in"
         color: (1, 1, 1, 1)
         halign: 'center'
+        size_hint: None,None
         pos_hint: {'center_x': 0.5, 'center_y': 0.09}
         font_size: "12sp"
         font_name: 'assets/fonts/Sofia-Pro-Light.ttf'

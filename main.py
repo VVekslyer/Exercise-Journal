@@ -7,18 +7,25 @@ from kivy.metrics import dp
 from kivymd.uix.snackbar import Snackbar
 from kivymd.uix.button import MDFlatButton
 from kivymd.uix.dialog import MDDialog
+#https://kivymd.readthedocs.io/en/latest/components/button/index.html
 
-# This allows us to import classes from other files in the project.
+
+
 import sys
 sys.path.insert(0, '/widgets/')
 from widgets.StartingScreen import StartingScreen
 from widgets.SignUpWithEmail import SignUpWithEmail
+from widgets.WhatAreYourGoals import WhatAreYourGoals
+from widgets.WhatIsYourWeight import WhatIsYourWeight
+from widgets.WhatIsYourHeight import WhatIsYourHeight
 from widgets.SettingsScreen import SettingsScreen
 from widgets.UserSettings import UserSettings
 from User import User
 
+from kivy.clock import Clock
+
 Builder.load_file('widgets/main.kv')
-    
+
 # Login and sign up screen.
 class LoginScreen(Screen):
     def __init__(self, **kw):
@@ -34,15 +41,15 @@ class HomeScreen(Screen):
 class App(MDApp):
     Window.size = (410, 730)
     Window.set_title('Exercise Journal')
-    current_user = User('Vitaliy', 'vitaly540@gmail.com', 'Beginner') # User initialized
+    current_user = User('Vitaliy', 'vitaly540@gmail.com', 'Beginner', 143, 5.9) # User initialized
     user_name = current_user.name
-
     def build(self):
         # These next few lines initialize the screen manager.
         # Our app is basically a collection of screens.
         # The app can be structured as five separate screens:
         #
         #             Starting Screen
+        #         (Email, Height, Weight)
         #                    |
         #                  Login
         #                    |
@@ -50,20 +57,21 @@ class App(MDApp):
         #            /       |       \
         #          Home   Workouts  Stats
         #                    
-        # You can set self.sm.current = 'home' to see the home screen.
-        # You can set self.sm.current = 'start-screen' to see the starting screen.
         self.sm = ScreenManager()
         self.sm.add_widget(StartingScreen(name='start-screen'))
         self.sm.add_widget(SignUpWithEmail(name='signup-with-email'))
+        self.sm.add_widget(WhatAreYourGoals(name='what-are-your-goals'))
+        self.sm.add_widget(WhatIsYourWeight(name='what-is-your-weight'))
+        self.sm.add_widget(WhatIsYourHeight(name='what-is-your-height'))
         self.sm.add_widget(LoginScreen(name='login'))
         self.sm.add_widget(HomeScreen(name='home'))
         self.sm.add_widget(SettingsScreen(name='settings'))
         self.sm.add_widget(UserSettings(name = 'user-settings'))
-        #self.sm.add_widget(Feedback(name = 'Feedback'))
-        self.sm.current = 'start-screen'
+        
+        self.sm.current = 'what-is-your-weight'
 
         # App theme
-        #self.theme_cls.theme_style = "Light"
+        
         
         menu_names = [
             "Settings","Info and Feedback", "Log Out"
@@ -114,18 +122,6 @@ class App(MDApp):
     def go_back(self, button, screen):
         self.sm.transition.direction = 'right'
         self.sm.current = screen
-
-    def go_to_home(self, button):
-        self.sm.transition.direction = 'left'
-        self.sm.current = 'home'
-
-    def go_to_signup_with_email(self, button):
-        self.sm.transition.direction = 'left'
-        self.sm.current = 'signup-with-email'
-    
-    def go_to_user_settings_screen(self, *args):
-        self.sm.transition.direction = 'right'
-        self.sm.current = 'user-settings'
 
     def show_logout_dialog(self, *args):
         self.dialog = MDDialog(
