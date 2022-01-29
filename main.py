@@ -89,6 +89,7 @@ class App(MDApp):
 
         return self.sm
 
+    # Menu functions
     def callback(self, button):
         self.menu.caller = button
         self.menu.open()
