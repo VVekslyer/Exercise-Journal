@@ -15,25 +15,50 @@
 <HomeScreen>:
     BoxLayout:
         orientation: 'vertical'
-        MDToolbar:
-            title: app.user_name
-            font_name: 'assets/fonts/Inter-Medium.ttf'
-            left_action_items: [["account-circle", lambda x: app.go_to(x, 'user-settings')]]
-            right_action_items: [["dots-vertical", lambda x: app.callback(x)]]
-            md_bg_color: app.theme_cls.bg_light
-            specific_text_color: (0,0,0,1)
-            elevation: 0  
+        MDLabel:
+            font_name: 'assets/fonts/Sofia-Pro-Semi-Bold.ttf'
+            text: "\nWelcome back,"
+            font_size: '14sp'
+            size_hint: (1, .1)
+            padding_y: '10dp'
+            padding_x: '15dp'
+            
+
+        MDLabel:
+            text: app.user_name + "."
+            font_name: 'assets/fonts/Sofia-Pro-Semi-Bold.ttf'
+            font_size: '30sp'
+            size_hint: (1, .05)
+            padding_x: '15dp'
+            y: root.height
+            
+
+        MDLabel:
+            text: "Calender/Workouts go here"
+            line_color: 1,0,0,1
+            size_hint: (1, 1)    
+        
+        MDFillRoundFlatButton:
+            text: "Add Workout"
+            text_color: 1, 1, 1, 1
+            md_bg_color: 0.73, 0.49, 0.28, 1
+            font_size: "18sp"
+            size_hint: 0.8, None
+            pos_hint: {'center_x': 0.5, 'center_y' : 0.7}
+            font_name: 'assets/fonts/Sofia-Pro-Medium.ttf'
+            on_release: app.go_to(self, 'what-is-your-height')
+            line_color: 0.73, 0.49, 0.28, 1
 
         MDBottomNavigation:
             text_color_active: 0, 0, 0, 1 # black color for the icons
             panel_color: 1, 1, 1, 1 # white color for background
+            size_hint: (1, .2)
+            
 
             MDBottomNavigationItem: 
                 name: "screen 1"
                 icon: 'home'     
-
-                Home:
-       
+        
 
             MDBottomNavigationItem:
                 name: "screen 2"
@@ -52,8 +77,6 @@
                         text_color: (0,0,0,1)
                         font_style: 'H4'
                         font_name: 'assets/fonts/Inter-SemiBold.ttf'
-
-                    FloatingPlusButton:
 
             MDBottomNavigationItem:
                 name: "screen 3"

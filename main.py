@@ -9,8 +9,6 @@ from kivymd.uix.button import MDFlatButton
 from kivymd.uix.dialog import MDDialog
 #https://kivymd.readthedocs.io/en/latest/components/button/index.html
 
-
-
 import sys
 sys.path.insert(0, '/widgets/')
 from widgets.StartingScreen import StartingScreen
@@ -68,9 +66,7 @@ class App(MDApp):
         self.sm.add_widget(SettingsScreen(name='settings'))
         self.sm.add_widget(UserSettings(name = 'user-settings'))
         
-        self.sm.current = 'what-is-your-weight'
-
-        # App theme
+        self.sm.current = 'start-screen'
         
         
         menu_names = [

@@ -1,20 +1,29 @@
-      
-<Home>:
+#: import FloatingPlusButton widgets.FloatingPlusButton
+#: import Home widgets.Home
+#: import Workouts widgets.Workouts
+#: import Progress widgets.Progress 
+#: import SignUpWithEmail widgets.SignUpWithEmail
+#: import WhatAreYourGoals widgets.WhatAreYourGoals
+#: include widgets/StartingScreen.kv
+#: include widgets/SignUpWithEmail.kv
+#: include widgets/WhatAreYourGoals.kv
+#: include widgets/WhatIsYourWeight.kv
+#: include widgets/WhatIsYourHeight.kv
+#: include widgets/SettingsScreen.kv
+#: include widgets/Home.kv
+
+<HomeScreen>:
     BoxLayout:
         orientation: 'vertical'
+        MDToolbar:
+            title: app.user_name
+            font_name: 'assets/fonts/Inter-Medium.ttf'
+            left_action_items: [["account-circle", lambda x: app.go_to(x, 'user-settings')]]
+            right_action_items: [["dots-vertical", lambda x: app.callback(x)]]
+            md_bg_color: app.theme_cls.bg_light
+            specific_text_color: (0,0,0,1)
+            elevation: 0  
 
-        MDLabel:
-            text: 'Welcome Back, '
-            text_size: self.size
-            valign: 'top'
-            halign: 'left'
-            padding_x: '24dp'
-            padding_y: '12dp'
-            text_color: (0,0,0,1)
-            font_style: 'H4'
-            font_name: 'assets/fonts/Inter-SemiBold.ttf'
-        
-            
         MDBottomNavigation:
             text_color_active: 0, 0, 0, 1 # black color for the icons
             panel_color: 1, 1, 1, 1 # white color for background

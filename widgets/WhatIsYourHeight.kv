@@ -1,4 +1,32 @@
 <WhatIsYourHeight>:
+    MDTextButton:
+        id: cm
+        name: 'cm' 
+        text: "CM "
+        color: (0, 0, 0, 1)
+        pos_hint: {'center_x': 0.75, 'center_y': 0.505}
+        font_size: "18sp"
+        on_release: root.toggle(self)
+        font_name: 'assets/fonts/Sofia-Pro-Light.ttf'
+        size_hint: None,None
+
+    MDLabel:
+        text: "|"
+        pos_hint: {'center_x': 1.291 ,  'center_y': 0.505}
+        font_size: "18sp"
+        font_name: 'assets/fonts/Sofia-Pro-Light.ttf'
+
+    MDTextButton:
+        id: ft
+        name: 'ft'
+        text: "FT "
+        color: (0, 0, 0, 1)
+        pos_hint: {'center_x': 0.85, 'center_y': 0.505}
+        font_size: "18sp"
+        font_name: 'assets/fonts/Sofia-Pro-Semi-Bold.ttf'
+        on_release: root.toggle(self)
+        size_hint: None,None
+
     MDBoxLayout:
         orientation: 'vertical'
         
@@ -23,7 +51,7 @@
             line_color_normal: 0, 0, 0, 1
             valign: 'top'
             pos_hint: {'center_x': 0.5}
-            size_hint: 0.75, None
+            size_hint: (0.5, None)
             height: "30dp"
             line_color: 0.73, 0.49, 0.28, 1
 
