@@ -198,7 +198,8 @@ android.archs = x86
 
 #
 # Python for android (p4a) specific
-#
+android.release_artifact = aab
+p4a.branch = develop
 
 # (str) python-for-android git clone directory (if empty, it will be automatically cloned from github)
 #p4a.source_dir =
