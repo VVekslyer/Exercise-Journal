@@ -64,7 +64,7 @@ class App(MDApp):
         self.sm.add_widget(LoginScreen(name='login'))
         self.sm.add_widget(HomeScreen(name='home'))
         self.sm.add_widget(SettingsScreen(name='settings'))
-        self.sm.add_widget(UserSettings(name = 'user-settings'))
+        self.sm.add_widget(UserSettings(name = 'user-settings'))    
         
         self.sm.current = 'start-screen'
         

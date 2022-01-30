@@ -39,8 +39,8 @@ version = 0.1
 # version.filename = %(source.dir)s/main.py
 
 # (list) Application requirements
-# comma separated e.g. requirements = sqlite3,kivy
-requirements = python3crystax==3.6, kivy, tornado, zipp, htmlparser, lockfile, brotli, importlib-metadata, python-ntlm, ordereddict, toml, cryptography, Cython, keyring, lxml, pillow, kivymd, watchdog, django-user
+# comma separated e.g. requirements = sqlite3,kivy==1.10.1
+requirements = python3crystax==3.6, tornado, zipp, htmlparser, lockfile, brotli, importlib-metadata, python-ntlm, ordereddict, toml, cryptography, Cython, keyring, lxml, pillow, kivymd, watchdog, django-user
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -102,7 +102,7 @@ android.api = 27
 android.sdk = 32
 
 # (str) Android NDK version to use
-#android.ndk = 10.3.2
+#android.ndk = 23.1.7779620
 
 # (bool) Use --private data storage (True) or --dir public storage (False)
 #android.private_storage = True
