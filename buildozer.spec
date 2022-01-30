@@ -1,6 +1,5 @@
-##############################################################################
 # about buildozer.spec : https://buildozer.readthedocs.io/en/latest/specifications.html
-##############################################################################
+# up-to-date buildozer.spec file: https://raw.githubusercontent.com/kivy/buildozer/master/buildozer/default.spec
 
 [app]
 
@@ -99,16 +98,16 @@ android.api = 26
 #android.minapi = 19
 
 # (int) Android SDK version to use
-android.sdk = 26
+#android.sdk = 20
 
 # (str) Android NDK version to use
-#android.ndk = 23.1.7779620
+#android.ndk = 19b
 
 # (bool) Use --private data storage (True) or --dir public storage (False)
 #android.private_storage = True
 
 # (str) Android NDK directory (if empty, it will be automatically downloaded.)
-android.ndk_path = 
+#android.ndk_path = 
 
 # (str) Android SDK directory (if empty, it will be automatically downloaded.)
 #android.sdk_path = ~/Desktop/platform-tools
