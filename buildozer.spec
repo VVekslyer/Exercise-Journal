@@ -40,7 +40,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy==1.10.1
-requirements = python3crystax, tornado, zipp, htmlparser, lockfile, brotli, importlib-metadata, python-ntlm, ordereddict, toml, cryptography, Cython, keyring, lxml, pillow, kivymd, watchdog, django-user
+requirements = tornado, zipp, htmlparser, lockfile, brotli, importlib-metadata, python-ntlm, ordereddict, toml, cryptography, Cython, keyring, lxml, pillow, kivymd, watchdog, django-user
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -99,7 +99,7 @@ android.api = 31
 #android.minapi = 19
 
 # (int) Android SDK version to use
-android.sdk = 31
+android.sdk = 20
 
 # (str) Android NDK version to use
 #android.ndk = 23.1.7779620
