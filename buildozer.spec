@@ -4,10 +4,10 @@
 [app]
 
 # (str) Title of your application
-title = Exercise Journal
+title = ExerciseJournal
 
 # (str) Package name
-package.name = Exercise Journal
+package.name = ExerciseJournal
 
 # (str) Package domain (needed for android/ios packaging)
 package.domain = org.exercisejournal.edu
@@ -39,7 +39,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy,
-requirements = kivy, tornado, zipp, HTMLParser, lockfile, brotli, importlib-metadata, python-ntlm, ordereddict, toml, cryptography, Cython, keyring, lxml, Pillow, kivymd, watchdog, django-user
+requirements = kivy, tornado, zipp, HTMLParser, lockfile, brotli, importlib-metadata, python-ntlm, ordereddict, toml, cryptography, Cython, keyring, lxml, Pillow, kivymd, watchdog, django-user, docwriter
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -61,7 +61,7 @@ orientation = portrait
 #services = NAME:ENTRYPOINT_TO_PY,NAME2:ENTRYPOINT2_TO_PY
 
 #
-# OSX Specific
+# 🍎 OSX Specific
 #
 
 #
@@ -74,7 +74,7 @@ osx.python_version = 3
 osx.kivy_version = 2.0.0
 
 #
-# Android specific
+# 📱 Android specific
 #
 
 # (bool) Indicate if the application should be fullscreen or not
@@ -87,7 +87,7 @@ fullscreen = 0
 # olive, purple, silver, teal.
 #android.presplash_color = #FFFFFF
 
-# (list) Permissions
+# 📃 (list) Permissions 
 android.permissions = INTERNET,CHANGE_WIFI_MULTICAST_STATE,ACCESS_NETWORK_STATE,ACCESS_WIFI_STATE
 
 # (int) Android API to use
@@ -244,40 +244,3 @@ warn_on_root = 1
 # (str) Path to build output (i.e. .apk, .ipa) storage
 # bin_dir = ./bin
 
-#    -----------------------------------------------------------------------------
-#    List as sections
-#
-#    You can define all the "list" as [section:key].
-#    Each line will be considered as a option to the list.
-#    Let's take [app] / source.exclude_patterns.
-#    Instead of doing:
-#
-#[app]
-#source.exclude_patterns = license,data/audio/*.wav,data/images/original/*
-#
-#    This can be translated into:
-#
-#[app:source.exclude_patterns]
-#license
-#data/audio/*.wav
-#data/images/original/*
-#
-
-
-#    -----------------------------------------------------------------------------
-#    Profiles
-#
-#    You can extend section / key with a profile
-#    For example, you want to deploy a demo version of your application without
-#    HD content. You could first change the title to add "(demo)" in the name
-#    and extend the excluded directories to remove the HD content.
-#
-#[app@demo]
-#title = My Application (demo)
-#
-#[app:source.exclude_patterns@demo]
-#images/hd/*
-#
-#    Then, invoke the command line with the "demo" profile:
-#
-#buildozer --profile demo android debug
