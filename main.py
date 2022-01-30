@@ -1,4 +1,5 @@
 import kivy
+kivy.require('2.0.0')
 import kivymd
 from kivymd.app import MDApp
 from kivy.core.window import Window

@@ -5,10 +5,10 @@
 [app]
 
 # (str) Title of your application
-title = exercisejournal
+title = Exercise Journal
 
 # (str) Package name
-package.name = exercisejournal
+package.name = Exercise Journal
 
 # (str) Package domain (needed for android/ios packaging)
 package.domain = org.exercisejournal.edu
@@ -40,7 +40,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy,
-requirements = kivy, tornado, zipp, htmlparser, lockfile, brotli, importlib-metadata, python-ntlm, ordereddict, toml, cryptography, Cython, keyring, lxml, pillow, kivymd, watchdog, django-user
+requirements = kivy, tornado, zipp, HTMLParser, lockfile, brotli, importlib-metadata, python-ntlm, ordereddict, toml, cryptography, Cython, keyring, lxml, Pillow, kivymd, watchdog, django-user
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -99,7 +99,7 @@ android.api = 26
 #android.minapi = 19
 
 # (int) Android SDK version to use
-android.sdk = 20
+android.sdk = 26
 
 # (str) Android NDK version to use
 #android.ndk = 23.1.7779620
@@ -196,7 +196,6 @@ android.ndk_path =
 # (str) The Android arch to build for, choices: armeabi-v7a, arm64-v8a, x86
 android.archs = arm64-v8a, armeabi-v7a
 
-#
 # Python for android (p4a) specific
 android.release_artifact = aab
 p4a.branch = develop
