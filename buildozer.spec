@@ -72,7 +72,7 @@ orientation = portrait
 osx.python_version = 3
 
 # Kivy version to use
-osx.kivy_version = 1.10.1
+osx.kivy_version = 2.0.0
 
 #
 # Android specific
@@ -93,10 +93,10 @@ android.permissions = INTERNET,CHANGE_WIFI_MULTICAST_STATE,ACCESS_NETWORK_STATE,
 
 # (int) Android API to use
 # see https://developer.android.com/distribute/best-practices/develop/target-sdk
-android.api = 31
+android.api = 20
 
 # (int) Minimum API required
-#android.minapi = 19
+android.minapi = 19
 
 # (int) Android SDK version to use
 android.sdk = 20
