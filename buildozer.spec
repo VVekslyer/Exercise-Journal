@@ -93,7 +93,7 @@ android.permissions = INTERNET,CHANGE_WIFI_MULTICAST_STATE,ACCESS_NETWORK_STATE,
 
 # (int) Android API to use
 # see https://developer.android.com/distribute/best-practices/develop/target-sdk
-android.api = 20
+android.api = 26
 
 # (int) Minimum API required
 #android.minapi = 19
