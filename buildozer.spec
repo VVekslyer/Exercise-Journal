@@ -39,8 +39,8 @@ version = 0.1
 # version.filename = %(source.dir)s/main.py
 
 # (list) Application requirements
-# comma separated e.g. requirements = sqlite3,kivy==1.10.1
-requirements = tornado, zipp, htmlparser, lockfile, brotli, importlib-metadata, python-ntlm, ordereddict, toml, cryptography, Cython, keyring, lxml, pillow, kivymd, watchdog, django-user
+# comma separated e.g. requirements = sqlite3,kivy,
+requirements = kivy, tornado, zipp, htmlparser, lockfile, brotli, importlib-metadata, python-ntlm, ordereddict, toml, cryptography, Cython, keyring, lxml, pillow, kivymd, watchdog, django-user
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
