@@ -40,7 +40,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy==1.10.1
-requirements = python3crystax==3.6, tornado, zipp, htmlparser, lockfile, brotli, importlib-metadata, python-ntlm, ordereddict, toml, cryptography, Cython, keyring, lxml, pillow, kivymd, watchdog, django-user
+requirements = python3crystax, tornado, zipp, htmlparser, lockfile, brotli, importlib-metadata, python-ntlm, ordereddict, toml, cryptography, Cython, keyring, lxml, pillow, kivymd, watchdog, django-user
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -93,13 +93,13 @@ android.permissions = INTERNET,CHANGE_WIFI_MULTICAST_STATE,ACCESS_NETWORK_STATE,
 
 # (int) Android API to use
 # see https://developer.android.com/distribute/best-practices/develop/target-sdk
-android.api = 27
+android.api = 31
 
 # (int) Minimum API required
 #android.minapi = 19
 
 # (int) Android SDK version to use
-android.sdk = 32
+android.sdk = 31
 
 # (str) Android NDK version to use
 #android.ndk = 23.1.7779620
@@ -108,7 +108,7 @@ android.sdk = 32
 #android.private_storage = True
 
 # (str) Android NDK directory (if empty, it will be automatically downloaded.)
-android.ndk_path = ~/Desktop/crystax-ndk-10.3.2
+android.ndk_path = 
 
 # (str) Android SDK directory (if empty, it will be automatically downloaded.)
 #android.sdk_path = ~/Desktop/platform-tools
