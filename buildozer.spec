@@ -4,7 +4,7 @@
 title = Exercise Journal
 
 # (str) Package name
-package.name = exercisejournal
+package.name = ej
 
 # (str) Package domain (needed for android/ios packaging)
 package.domain = org.test
@@ -37,7 +37,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements =  kivy, kivymd, tornado, zipp, HTMLParser, lockfile, brotli, importlib-metadata, python-ntlm, ordereddict, toml, cryptography, Cython, keyring, lxml, Pillow, watchdog, django-user, docwriter
+requirements = python3,kivy
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -184,7 +184,7 @@ fullscreen = 0
 # Either form may be used, and assets need not be in 'source.include_exts'.
 # 1) android.add_assets = source_asset_relative_path
 # 2) android.add_assets = source_asset_path:destination_asset_relative_path
-#android.add_assets = ./assets
+#android.add_assets =
 
 # (list) Gradle dependencies to add
 #android.gradle_dependencies =
@@ -284,7 +284,7 @@ android.allow_backup = True
 # android.no-compile-pyo = True
 
 # (str) The format used to package the app for release mode (aab or apk).
-# android.release_artifact = aab
+android.release_artifact = aab
 
 #
 # Python for android (p4a) specific
@@ -297,7 +297,7 @@ android.allow_backup = True
 #p4a.fork = kivy
 
 # (str) python-for-android branch to use, defaults to master
-#p4a.branch = master
+p4a.branch = master
 
 # (str) python-for-android specific commit to use, defaults to HEAD, must be within p4a.branch
 #p4a.commit = HEAD
