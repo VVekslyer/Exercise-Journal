@@ -13,7 +13,7 @@ package.domain = org.test
 source.dir = .
 
 # (list) Source files to include (let empty to include all the files)
-source.include_exts = py,png,jpg,kv,atlas,ttf
+source.include_exts = py,png,jpg,kv,atlas,ttf,txt
 
 # (list) List of inclusions using pattern matching
 #source.include_patterns = assets/*,images/*.png
@@ -37,7 +37,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy
+requirements = python==3.8,kivy,jdcal, brotli, certifi, cffi, charset-normalizer, cryptography, docwriter, cython, django-user, docutils, htmlparser, idna, importlib-metadata, jeepney, keyring, kivy-deps.angle, kivy-deps.glew, kivy-deps.sdl2, kivy-garden, kivymd, pillow, lockfile, lxml, ordereddict, pycparser, pygments, pypiwin32, python-ntlm, pywin32-ctypes, requests, secretstorage, tarnado, ordereddict, urllib3, watchdog, zipp, toml
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -184,7 +184,7 @@ fullscreen = 0
 # Either form may be used, and assets need not be in 'source.include_exts'.
 # 1) android.add_assets = source_asset_relative_path
 # 2) android.add_assets = source_asset_path:destination_asset_relative_path
-#android.add_assets =
+#android.add_assets = ./assets
 
 # (list) Gradle dependencies to add
 #android.gradle_dependencies =
