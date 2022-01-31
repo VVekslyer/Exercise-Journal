@@ -37,7 +37,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python==3.8,kivy, jdcal, brotli, certifi, cffi, charset-normalizer, cryptography, importlib-metadata, docwriter, cython, django-user, docutils, htmlparser, idna, jeepney, keyring, kivymd, pillow, lockfile, lxml, ordereddict, pycparser, kivy-garden, pygments, pypiwin32, python-ntlm, pywin32-ctypes, requests, secretstorage, tornado, ordereddict, urllib3, watchdog, zipp, toml
+requirements = python3==3.8.12, kivy, jdcal, brotli, certifi, cffi, charset-normalizer, cryptography, importlib-metadata, docwriter, cython, django-user, docutils, htmlparser, idna, jeepney, keyring, kivymd, pillow, lockfile, lxml, ordereddict, pycparser, kivy-garden, pygments, pypiwin32, python-ntlm, pywin32-ctypes, requests, secretstorage, tornado, ordereddict, urllib3, watchdog, zipp, toml
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
