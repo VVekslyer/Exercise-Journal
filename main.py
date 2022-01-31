@@ -37,7 +37,7 @@ class HomeScreen(Screen):
 
 # Initialize app.
 class App(MDApp):
-    Window.size = (410, 730)
+    #Window.size = (410, 730)
     Window.set_title('Exercise Journal')
     current_user = User('Vitaliy', 'vitaly540@gmail.com', 'Beginner', 143, 5.9) # User initialized
     user_name = current_user.name
