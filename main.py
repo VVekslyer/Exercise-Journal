@@ -33,11 +33,12 @@ class LoginScreen(Screen):
 class HomeScreen(Screen):
     def __init__(self, **kw):
         super().__init__(**kw)
+        self.Types_Of_Workouts = ["Leg Day", "Press Day", "Pull Day", "Rest Day"]
+        
 
 
 # Initialize app.
 class App(MDApp):
-    #Window.size = (410, 730)
     Window.set_title('Exercise Journal')
     current_user = User('Vitaliy', 'vitaly540@gmail.com', 'Beginner', 143, 5.9) # User initialized
     user_name = current_user.name
@@ -66,7 +67,7 @@ class App(MDApp):
         self.sm.add_widget(SettingsScreen(name='settings'))
         self.sm.add_widget(UserSettings(name = 'user-settings'))    
         
-        self.sm.current = 'start-screen'
+        self.sm.current = 'home'
         
         
         menu_names = [

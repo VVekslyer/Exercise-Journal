@@ -15,38 +15,6 @@
 <HomeScreen>:
     BoxLayout:
         orientation: 'vertical'
-        MDLabel:
-            font_name: 'assets/fonts/Sofia-Pro-Semi-Bold.ttf'
-            text: "\nWelcome back,"
-            font_size: '14sp'
-            size_hint: (1, .1)
-            padding_y: '10dp'
-            padding_x: '15dp'
-            
-
-        MDLabel:
-            text: app.user_name + "."
-            font_name: 'assets/fonts/Sofia-Pro-Semi-Bold.ttf'
-            font_size: '30sp'
-            size_hint: (1, .05)
-            padding_x: '15dp'
-            y: root.height
-            
-
-        MDLabel:
-            text: "Calender/Workouts go here"
-            size_hint: (1, 1)    
-        
-        MDFillRoundFlatButton:
-            text: "Add Workout"
-            text_color: 1, 1, 1, 1
-            md_bg_color: 0.73, 0.49, 0.28, 1
-            font_size: "18sp"
-            size_hint: 0.8, None
-            pos_hint: {'center_x': 0.5, 'center_y' : 0.7}
-            font_name: 'assets/fonts/Sofia-Pro-Medium.ttf'
-            on_release: app.go_to(self, 'start-screen')
-            line_color: 0.73, 0.49, 0.28, 1
 
         MDBottomNavigation:
             text_color_active: 0, 0, 0, 1 # black color for the icons
@@ -57,6 +25,8 @@
             MDBottomNavigationItem: 
                 name: "screen 1"
                 icon: 'home'     
+
+                Home:
         
 
             MDBottomNavigationItem:
