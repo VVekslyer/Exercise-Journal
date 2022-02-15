@@ -24,6 +24,7 @@ Pillow = "^8.3.2"
 kivymd = "^0.104.2"
 watchdog = "^2.1.5"
 django-user = "^0.2.1"
+numpy = "^1.22.2"
 
 [tool.poetry.dev-dependencies]
 

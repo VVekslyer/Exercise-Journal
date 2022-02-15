@@ -1,0 +1,28 @@
+<Date@MDIconButton>:
+    icon: 'assets/images/calendar-circle.png'
+
+<DateLabel@MDLabel>:
+    text: "1"
+    color: 1,1,1,1
+    halign: 'center'
+    valign: 'middle'
+    font_name: 'assets/fonts/Sofia-Pro-Medium.ttf'
+
+<DayLabel@MDLabel>:
+    color: 0,0,0,1
+    text: "Mon"
+    pos_hint: {'x': .04}
+    font_name: 'assets/fonts/Sofia-Pro-Light.ttf'
+    valign: 'middle'
+    halign: 'center'
+    size_hint: None, None
+    height: 35
+    width: 40
+
+<CalendarDay@BoxLayout>:
+    orientation: 'vertical'
+#       DayLabel:
+#           text: 'Mon'
+#       Date:
+#           DateLabel:
+#               text: '1'

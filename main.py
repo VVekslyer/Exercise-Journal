@@ -7,6 +7,7 @@ from kivy.metrics import dp
 from kivymd.uix.snackbar import Snackbar
 from kivymd.uix.button import MDFlatButton
 from kivymd.uix.dialog import MDDialog
+from kivy.clock import Clock
 #https://kivymd.readthedocs.io/en/latest/components/button/index.html
 
 import sys
@@ -20,7 +21,6 @@ from widgets.SettingsScreen import SettingsScreen
 from widgets.UserSettings import UserSettings
 from User import User
 
-from kivy.clock import Clock
 
 Builder.load_file('widgets/main.kv')
 
@@ -40,7 +40,14 @@ class HomeScreen(Screen):
 # Initialize app.
 class App(MDApp):
     Window.set_title('Exercise Journal')
-    current_user = User('Vitaliy', 'vitaly540@gmail.com', 'Beginner', 143, 5.9) # User initialized
+    #Window.size = (400, 800)
+    current_user = User(
+        name = 'Vitaliy', 
+        email = 'vitaly540@gmail.com', 
+        goals = ['Strength'], 
+        level = 'Beginner', 
+        weight = 65, 
+        height = 180)
     user_name = current_user.name
     def build(self):
         # These next few lines initialize the screen manager.
@@ -66,10 +73,13 @@ class App(MDApp):
         self.sm.add_widget(HomeScreen(name='home'))
         self.sm.add_widget(SettingsScreen(name='settings'))
         self.sm.add_widget(UserSettings(name = 'user-settings'))    
-        
         self.sm.current = 'home'
         
         
+        self.screen_names = [
+            'start-screen', 'signup-with-email', 'what-are-your-goals', 'what-are-your-goals', 'what-is-your-weight', 'what-is-your-height', 'login', 'home', 'settings', 'user-settings'
+        ]
+
         menu_names = [
             "Settings","Info and Feedback", "Log Out"
         ]
@@ -87,6 +97,11 @@ class App(MDApp):
             items=triple_dots_menu_items,
             width_mult=4,
         )
+
+        prev = self.sm.current
+        for screen in self.screen_names:
+            self.sm.current = screen
+        self.sm.current = prev
 
         return self.sm
 
