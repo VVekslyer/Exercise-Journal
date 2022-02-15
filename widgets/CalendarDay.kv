@@ -1,23 +1,30 @@
 <Date@MDIconButton>:
-    icon: 'assets/images/calendar-circle.png'
+    #icon: 'assets/images/calendar-circle.png'
+    icon: ''
+    icon_size: (dp(38), dp(38))
+    md_bg_color: (250/255,250/255,250/255, 1)
 
 <DateLabel@MDLabel>:
+    id: date
+    name: 'date'
     text: "1"
-    color: 1,1,1,1
+    color: 0,0,0,1
     halign: 'center'
     valign: 'middle'
     font_name: 'assets/fonts/Sofia-Pro-Medium.ttf'
 
 <DayLabel@MDLabel>:
+    id: day_of_week
+    name: 'day_of_week'
     color: 0,0,0,1
     text: "Mon"
-    pos_hint: {'x': .04}
+    pos_hint: {'x': .045}
     font_name: 'assets/fonts/Sofia-Pro-Light.ttf'
     valign: 'middle'
     halign: 'center'
     size_hint: None, None
-    height: 35
-    width: 40
+    height: dp(35)
+    width: dp(40)
 
 <CalendarDay@BoxLayout>:
     orientation: 'vertical'

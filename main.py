@@ -40,7 +40,7 @@ class HomeScreen(Screen):
 # Initialize app.
 class App(MDApp):
     Window.set_title('Exercise Journal')
-    #Window.size = (400, 800)
+    Window.size = (360, 740)
     current_user = User(
         name = 'Vitaliy', 
         email = 'vitaly540@gmail.com', 
@@ -84,7 +84,7 @@ class App(MDApp):
             "Settings","Info and Feedback", "Log Out"
         ]
 
-        self.nameBoxes = ["Today","Tomorrow","Day After"]
+        self.nameBoxes = ["Today", "Tomorrow", "Day After"]
         self.TitleCounter = 0
         triple_dots_menu_items = [{
             "viewclass": "OneLineListItem",

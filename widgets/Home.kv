@@ -28,66 +28,91 @@
         # A horizontal list of buttons
         BoxLayout:
             orientation: 'horizontal'
-            size_hint: 1.0, None
+            size_hint: 1.0, 0.2
             ScrollView:
                 size_hint: 1.0, None
                 do_scroll_y: False
+                bar_color: [0, 0, 0, 0]
+                bar_inactive_color: [0, 0, 0, 0]
                 GridLayout:
-                    id: container_x
                     size_hint_x: None
                     rows: 1
                     col_default_width: root.width*0.15
                     width: self.minimum_width
-                    spacing: 10
-
-                    CalendarDay:
-                        DayLabel:
-                            text: 'Mon'
-                        Date:
-                            DateLabel: 
-                                text: '1'
-
-                    CalendarDay:
-                        DayLabel:
-                            text: 'Tue'
-                        Date:
-                            DateLabel: 
-                                text: '2'
+                    spacing: dp(10)
+                    padding: [dp(20), 0, 0, 0]
 
                     CalendarDay:
                         DayLabel:
                             text: 'Wed'
                         Date:
+                            icon: 'assets/images/calendar-circle.png'
                             DateLabel: 
-                                text: '3'
+                                text: '7'
+                                color: 1, 1, 1, 1
 
                     CalendarDay:
                         DayLabel:
                             text: 'Thu'
                         Date:
                             DateLabel: 
-                                text: '4'
+                                text: '8'
 
                     CalendarDay:
                         DayLabel:
                             text: 'Fri'
                         Date:
                             DateLabel: 
-                                text: '5'
+                                text: '9'
 
                     CalendarDay:
                         DayLabel:
                             text: 'Sat'
                         Date:
                             DateLabel: 
-                                text: '6'
+                                text: '10'
 
                     CalendarDay:
                         DayLabel:
                             text: 'Sun'
                         Date:
                             DateLabel: 
-                                text: '7'
+                                text: '11'
+
+                    CalendarDay:
+                        DayLabel:
+                            text: 'Mon'
+                        Date:
+                            DateLabel: 
+                                text: '12'
+
+                    CalendarDay:
+                        DayLabel:
+                            text: 'Tue'
+                        Date:
+                            DateLabel: 
+                                text: '13'
+
+                    CalendarDay:
+                        DayLabel:
+                            text: 'Wed'
+                        Date:
+                            DateLabel: 
+                                text: '14'
+
+                    CalendarDay:
+                        DayLabel:
+                            text: 'Thu'
+                        Date:
+                            DateLabel: 
+                                text: '15'
+
+                    CalendarDay:
+                        DayLabel:
+                            text: 'Fri'
+                        Date:
+                            DateLabel: 
+                                text: '16'
 
 
                     
