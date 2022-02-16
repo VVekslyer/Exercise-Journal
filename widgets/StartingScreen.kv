@@ -2,7 +2,7 @@
     MDBoxLayout:
         orientation: 'vertical'
         md_bg_color: (0, 0, 0, 1)
-        size_hint:root.height,root.width
+        #size_hint:root.height,root.width
 
     MDLabel:
         text: "Welcome."
@@ -33,7 +33,7 @@
         text_color: 1, 1, 1, 1
         md_bg_color: 0.73, 0.49, 0.28, 1
         font_size: "18sp"
-        size_hint: 0.8, 0.07
+        #size_hint: 0.8, 0.07
         pos_hint: {'center_x': 0.5, 'center_y': 0.3}
         font_name: 'assets/fonts/Sofia-Pro-Medium.ttf'
         on_release: app.go_to(self, 'signup-with-email')
@@ -51,7 +51,8 @@
         text: "         Log in with Google" # idk how else to center this ¯\_(ツ)_/¯
         text_color: 1, 1, 1, 1
         md_bg_color: 0.27, 0.42, 0.93, 1
-        size_hint: 0.8, 0.07
+        #size_hint: (0.8, 0.07)
+        #size_hint_x: 0.8
         font_size: "18sp"
         text_size: self.size 
         pos_hint: {'center_x': 0.5, 'center_y': 0.16}

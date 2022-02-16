@@ -19,7 +19,7 @@
             font_style: 'H4'    
             font_size: "40sp"
             font_name: 'assets/fonts/Sofia-Pro-Semi-Bold.ttf'
-            size_hint: 1, 0.55
+            #size_hint: 1, 0.55
             pos_hint: {'center_y': 0.5}
         
         MDTextField:
@@ -30,7 +30,7 @@
             line_color_normal: 0, 0, 0, 1
             valign: 'top'
             pos_hint: {'center_x': 0.5}
-            size_hint: 0.75, None
+            #size_hint: 0.75, None
             height: "30dp"
             line_color: 0.73, 0.49, 0.28, 1
             right_action_items: [["arrow-left", lambda x: app.go_back(x, 'what-are-your-goals')]]
@@ -38,7 +38,7 @@
           
         MDBoxLayout:
             orientation: 'vertical'
-            size_hint: 1.0, 0.5
+            #size_hint: 1.0, 0.5
             pos_hint: {'center_x': 0.5, 'center_y': 0.5}
             spacing: 20
 
@@ -47,7 +47,7 @@
                 text_color: 1, 1, 1, 1
                 md_bg_color: 0.73, 0.49, 0.28, 1
                 font_size: "18sp"
-                size_hint: 0.8, None
+                #size_hint: 0.8, None
                 pos_hint: {'center_x': 0.5, 'center_y': 0.25}
                 font_name: 'assets/fonts/Sofia-Pro-Medium.ttf'
                 on_release: app.go_to(self, 'what-are-your-goals')
@@ -58,7 +58,7 @@
                 color: (0, 0, 0, 1)
                 valign: 'center'
                 pos_hint: {'center_x': 0.5}
-                size_hint: None,None
+                #size_hint: None,None
                 font_size: "12sp"
                 font_name: 'assets/fonts/Sofia-Pro-Light.ttf'
                 on_release: app.go_to(self, 'what-are-your-goals')
