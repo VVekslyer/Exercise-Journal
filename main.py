@@ -40,7 +40,7 @@ class HomeScreen(Screen):
 # Initialize app.
 class App(MDApp):
     Window.set_title('Exercise Journal')
-    Window.size = (360, 740)
+    #Window.size = (360, 740)
     current_user = User(
         name = 'Vitaliy', 
         email = 'vitaly540@gmail.com', 
@@ -73,7 +73,7 @@ class App(MDApp):
         self.sm.add_widget(HomeScreen(name='home'))
         self.sm.add_widget(SettingsScreen(name='settings'))
         self.sm.add_widget(UserSettings(name = 'user-settings'))    
-        self.sm.current = 'home'
+        self.sm.current = 'start-screen'
         
         
         self.screen_names = [
