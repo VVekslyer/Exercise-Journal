@@ -7,8 +7,6 @@ from kivy.metrics import dp
 from kivymd.uix.snackbar import Snackbar
 from kivymd.uix.button import MDFlatButton
 from kivymd.uix.dialog import MDDialog
-from kivy.clock import Clock
-#https://kivymd.readthedocs.io/en/latest/components/button/index.html
 
 import sys
 sys.path.insert(0, '/widgets/')
