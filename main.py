@@ -10,6 +10,7 @@ from kivymd.uix.dialog import MDDialog
 
 import sys
 sys.path.insert(0, '/widgets/')
+sys.path.insert(1, '/src/')
 from widgets.StartingScreen import StartingScreen
 from widgets.SignUpWithEmail import SignUpWithEmail
 from widgets.WhatAreYourGoals import WhatAreYourGoals
@@ -17,7 +18,7 @@ from widgets.WhatIsYourWeight import WhatIsYourWeight
 from widgets.WhatIsYourHeight import WhatIsYourHeight
 from widgets.SettingsScreen import SettingsScreen
 from widgets.UserSettings import UserSettings
-from User import User
+from src.User import User
 
 
 Builder.load_file('widgets/main.kv')
@@ -38,7 +39,7 @@ class HomeScreen(Screen):
 # Initialize app.
 class App(MDApp):
     Window.set_title('Exercise Journal')
-    #Window.size = (360, 740)
+    Window.size = (360, 740)
     current_user = User(
         name = 'Vitaliy', 
         email = 'vitaly540@gmail.com', 
