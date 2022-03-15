@@ -18,6 +18,7 @@ from widgets.WhatIsYourWeight import WhatIsYourWeight
 from widgets.WhatIsYourHeight import WhatIsYourHeight
 from widgets.SettingsScreen import SettingsScreen
 from widgets.UserSettings import UserSettings
+from widgets.AddWorkout import AddWorkoutScreen
 from src.User import User
 
 
@@ -71,7 +72,8 @@ class App(MDApp):
         self.sm.add_widget(LoginScreen(name='login'))
         self.sm.add_widget(HomeScreen(name='home'))
         self.sm.add_widget(SettingsScreen(name='settings'))
-        self.sm.add_widget(UserSettings(name = 'user-settings'))    
+        self.sm.add_widget(UserSettings(name = 'user-settings'))
+        self.sm.add_widget(AddWorkoutScreen(name = 'add-workout'))
         self.sm.current = 'start-screen'
         
         
