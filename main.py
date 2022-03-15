@@ -10,7 +10,7 @@ from kivymd.uix.dialog import MDDialog
 
 import sys
 sys.path.insert(0, '/widgets/')
-sys.path.insert(1, '/src/')
+sys.path.insert(0, '/src/')
 from widgets.StartingScreen import StartingScreen
 from widgets.SignUpWithEmail import SignUpWithEmail
 from widgets.WhatAreYourGoals import WhatAreYourGoals
