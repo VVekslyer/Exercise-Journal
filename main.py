@@ -8,9 +8,9 @@ from kivymd.uix.snackbar import Snackbar
 from kivymd.uix.button import MDFlatButton
 from kivymd.uix.dialog import MDDialog
 
-import sys
-sys.path.insert(0, '/widgets/')
-sys.path.insert(0, '/src/')
+from sys import path
+path.insert(0, '/widgets/')
+path.insert(0, '/src/')
 from widgets.StartingScreen import StartingScreen
 from widgets.SignUpWithEmail import SignUpWithEmail
 from widgets.WhatAreYourGoals import WhatAreYourGoals
@@ -21,20 +21,18 @@ from widgets.UserSettings import UserSettings
 from widgets.AddWorkout import AddWorkoutScreen
 from src.User import User
 
-
 Builder.load_file('widgets/main.kv')
-
-# Login and sign up screen.
-class LoginScreen(Screen):
-    def __init__(self, **kw):
-        super().__init__(**kw)
 
 # Screen after an account has been created.
 class HomeScreen(Screen):
     def __init__(self, **kw):
         super().__init__(**kw)
         self.Types_Of_Workouts = ["Leg Day", "Press Day", "Pull Day", "Rest Day"]
-        
+
+# Login and sign up screen.
+class LoginScreen(Screen):
+    def __init__(self, **kw):
+        super().__init__(**kw)
 
 
 # Initialize app.
@@ -49,6 +47,7 @@ class App(MDApp):
         weight = 65, 
         height = 180)
     user_name = current_user.name
+    
     def build(self):
         # These next few lines initialize the screen manager.
         # Our app is basically a collection of screens.
@@ -74,7 +73,7 @@ class App(MDApp):
         self.sm.add_widget(SettingsScreen(name='settings'))
         self.sm.add_widget(UserSettings(name = 'user-settings'))
         self.sm.add_widget(AddWorkoutScreen(name = 'add-workout'))
-        self.sm.current = 'start-screen'
+        self.sm.current = 'home'
         
         
         self.screen_names = [

@@ -1,7 +1,7 @@
 <WhatIsYourHeight>:
     MDTextButton:
         id: cm
-        name: 'cm' 
+        name: 'cm'
         text: "CM "
         color: (0, 0, 0, 1)
         pos_hint: {'center_x': 0.8, 'center_y': 0.505}
@@ -29,20 +29,20 @@
 
     MDBoxLayout:
         orientation: 'vertical'
-        
+
         MDToolbar:
             md_bg_color: app.theme_cls.bg_light
             left_action_items: [["arrow-left", lambda x: app.go_back(x, 'what-is-your-weight')]]
             specific_text_color: (0,0,0,1)
-            
+
         MDLabel:
             text: "    What is \n    your height?"
-            font_style: 'H4'    
+            font_style: 'H4'
             font_size: "40sp"
             font_name: 'assets/fonts/Sofia-Pro-Semi-Bold.ttf'
             #size_hint:  1, 0.55
             pos_hint: {'center_y': 0.5}
-        
+
         MDTextField:
             hint_text: "Please enter a valid height"
             helper_text_mode: "on_focus"
@@ -73,7 +73,7 @@
                 font_name: 'assets/fonts/Sofia-Pro-Medium.ttf'
                 on_release: app.go_to(self, 'home')
                 line_color: 0.73, 0.49, 0.28, 1
-            
+
             MDTextButton:
                 text: "Skip For Now"
                 color: (0, 0, 0, 1)
@@ -84,5 +84,5 @@
                 font_size: "12sp"
                 font_name: 'assets/fonts/Sofia-Pro-Light.ttf'
                 on_release: app.go_to(self, 'home')
-        
+
         MDBottomAppBar:

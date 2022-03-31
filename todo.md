@@ -1,10 +1,10 @@
-### App
+# App
 
 - [ ] Front-end and Back-end in progress.
 - [ ] Create a MongoDB database for the app.
   - [ ] Will store each user's name, email, goals, weight, height, custom workouts, progress data and so on.
 
-### Front-end
+## Front-end
 
 - [ ] Make it so that given a list of workouts, the app displays all the workouts neatly along each of its exercises.
 - [ ] If we hover our mouse over one of the calendar days, the image should pop up.
@@ -13,34 +13,34 @@
 - [ ] Create the graphed data screen, where the user can see their progress.
 - [ ] Create a profile screen, where the user could upload a photo and see a few stats such as their current goals.
 
-### Specifications
+## Specifications
 
 - [ ] Make it so the user can choose what exercises he'd like to do at the time, so it isn't preset that they have to do legs, chest, pull.
 
-### Back-end
+## Back-end
 
 - [ ] ExpressJS implementation in progress.
 - [ ] Create a MongoDB database for the app.
   - [ ] Will store each user's name, email, goals, weight, height, custom workouts, progress data and so on.
 
-### Android
+## Android
 
 - [ ] When the app is first launched, it runs very slowly. However, it runs really smoothly after the user has touched through each screen. App runs really fast on Windows but Android needs work.
 - [ ] We need the app to remember the user's account. In it will remember a copy of the User class. It will contain the user's name, email, goals, weight, height, custom workouts and so on.
   - [ ] We should find a way to store the user's details on their device.
   - [ ] As well as online using MongoDB.
 
-### iOS
+## iOS
 
 - [ ] Configure buildozer such that it will distribute an iOS version of the app. May need to use Myungsan's MacOS to do so.
 
-### Design
+## Design
 
 - [ ] We need a logo for our app.
 - [ ] We need a splashscreen for our app. Splashscreen is the first screen that every android app displays.
-- [ ] In the starting screen, it doesn't feel like we're properly explaining what the goals. How would I know what I'd like to strive for Hyportrophy? Strength? Or performance?
+- [ ] In the starting screen, it doesn't feel like we're properly explaining what the goals. How would I know what I'd like to strive for Hypertrophy? Strength? Or performance?
 
-### Optomization
+## Optimization
 
 - [ ] The app is currently around 50 MB.
   - [ ] The main issue is likely due to many python modules in the buildozer.spec file that are included, but are not actually being used. They take up a lot of space.
