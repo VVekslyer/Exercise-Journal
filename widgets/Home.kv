@@ -1,10 +1,11 @@
 #: include widgets/CalendarDay.kv
+#: include widgets/CustomDropDown.kv
 #: import CalendarDay widgets.CalendarDay
+#: import CustomDropDown widgets.CustomDropDown
 
 <Home>:
-    BoxLayout:
+    MDBoxLayout:  
         orientation: 'vertical'
-
         MDLabel:
             font_name: 'assets/fonts/Sofia-Pro-Semi-Bold.ttf'
             text: "\nWelcome back,"
@@ -26,7 +27,7 @@
 
         # Calendar
         # A horizontal list of buttons
-        BoxLayout:
+        MDBoxLayout:
             orientation: 'horizontal'
             size_hint: None, None
             height: root.height * 0.15
@@ -164,6 +165,7 @@
                 do_scroll_x: False
                 GridLayout:
                     size_hint: None, None
+                    height: root.height * 0.4
                     cols: 1
                     col_default_width: root.width * 0.89
                     padding: [dp(20), 0, dp(20), 0]
@@ -193,6 +195,9 @@
                         MDLabel:
                             text: 'Sets        Reps        Weight'
                             font_name: 'assets/fonts/Sofia-Pro-Light.ttf'
+                    
+                    
+                    
 
 
         # BoxLayout:
@@ -232,14 +237,14 @@
 
 
         MDFillRoundFlatButton:
-            text: 'Add Workout'
+            text: "Add Workout"
             text_color: 1, 1, 1, 1
             md_bg_color: 0.73, 0.49, 0.28, 1
-            font_size: "18sp"
+            font_size: '18sp'
+            text_size: self.size
             size_hint: None, None
             width: root.width * 0.8
-            height: dp(5)
-            pos_hint: {'center_x': 0.5, 'center_y' : 0.7}
+            height: root.width * 0.12
+            pos_hint: {'center_x': 0.5, 'center_y': 0.3}
             font_name: 'assets/fonts/Sofia-Pro-Medium.ttf'
             on_release: app.go_to(self, 'start-screen')
-            line_color: 0.73, 0.49, 0.28, 1

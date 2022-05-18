@@ -1,9 +1,10 @@
+from operator import indexOf
 from kivymd.app import MDApp
 from kivy.core.window import Window
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivymd.uix.menu import MDDropdownMenu
-from kivy.metrics import dp
+from kivy.metrics import dp 
 from kivymd.uix.snackbar import Snackbar
 from kivymd.uix.button import MDFlatButton
 from kivymd.uix.dialog import MDDialog
@@ -23,6 +24,7 @@ from src.User import User
 
 Builder.load_file('widgets/main.kv')
 
+
 # Screen after an account has been created.
 class HomeScreen(Screen):
     def __init__(self, **kw):
@@ -38,7 +40,7 @@ class LoginScreen(Screen):
 # Initialize app.
 class App(MDApp):
     Window.set_title('Exercise Journal')
-    Window.size = (360, 740)
+    #Window.size = (360, 740)
     current_user = User(
         name = 'Vitaliy', 
         email = 'vitaly540@gmail.com', 
