@@ -37,7 +37,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3==3.8.12, kivymd==0.104.2, kivy, jdcal, brotli, certifi, cffi, charset-normalizer, cryptography, importlib-metadata, docwriter, cython, docutils, idna, jeepney, keyring, pillow, lockfile, lxml, ordereddict, pycparser, kivy-garden, pygments, pypiwin32, python-ntlm, pywin32-ctypes, requests, secretstorage, ordereddict, urllib3, watchdog
+requirements = python3==3.10.4, kivymd==0.104.2, kivy, jdcal, brotli, certifi, cffi, charset-normalizer, cryptography, importlib-metadata, docwriter, cython, docutils, idna, jeepney, keyring, pillow, lockfile, lxml, ordereddict, pycparser, kivy-garden, pygments, pypiwin32, python-ntlm, pywin32-ctypes, requests, secretstorage, ordereddict, urllib3, watchdog
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -108,7 +108,7 @@ android.permissions = INTERNET, BLUETOOTH
 #android.sdk = 20
 
 # (str) Android NDK version to use
-#android.ndk = 23
+android.ndk = 23
 
 # (int) Android NDK API to use. This is the minimum API your app will support, it should usually match android.minapi.
 android.ndk_api = 23
