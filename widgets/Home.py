@@ -17,11 +17,15 @@ class ExercisesList(MDBoxLayout):
         self.workouts = ["Push Day", "Pull Day", "Leg Day", "Cardio Day"]
         Clock.schedule_once(self.generate_panel)
 
+
+    # TODO Change the font and font size using Kivy markup
+    # * https://kivy.org/doc/stable/api-kivy.core.text.markup.html
+    
     def generate_panel(self, *args):
-        for i in range(3):
+        for i in range(4):
             self.ids.box.add_widget(MDExpansionPanel(
                 panel_cls = MDExpansionPanelOneLine(
-                    text = f'    {self.workouts[i]}'
+                    text = f'    [size=20sp][font=assets/fonts/Sofia-Pro-Semi-Bold.ttf]{self.workouts[i]}[/font][/size]'
                 ),
                 content = Content()
             )
