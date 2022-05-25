@@ -2,7 +2,6 @@ from kivy.uix.screenmanager import Screen
 
 class WhatIsYourWeight(Screen):
     def __init__(self, **kw):
-        unit = "LBS"
         super().__init__(**kw)
     
     def toggle(self, text_button):

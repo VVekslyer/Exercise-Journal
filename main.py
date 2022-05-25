@@ -1,4 +1,3 @@
-from operator import indexOf
 from kivymd.app import MDApp
 from kivy.core.window import Window
 from kivy.lang import Builder
@@ -46,7 +45,7 @@ class App(MDApp):
         email = 'vitaly540@gmail.com', 
         goals = ['Strength'], 
         level = 'Beginner', 
-        weight = 65, 
+        weight = 65,
         height = 180)
     user_name = current_user.name
     
