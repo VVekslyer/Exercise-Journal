@@ -1,12 +1,19 @@
 from kivymd.uix.bottomnavigation import MDBottomNavigationItem
 from kivymd.uix.boxlayout import MDBoxLayout
-from kivymd.uix.expansionpanel import MDExpansionPanel, MDExpansionPanelThreeLine, MDExpansionPanelLabel, MDExpansionPanelOneLine
-from kivymd import images_path
+from kivymd.uix.expansionpanel import MDExpansionPanel, MDExpansionPanelOneLine
 from kivy.clock import Clock
 
 class Home(MDBottomNavigationItem):
     def __init__(self, **kw):
         super().__init__(**kw)
+
+        self.current_chosen_date = None
+        Clock.schedule_once(self.set_default_date)
+
+    def set_default_date(self, *args):
+        self.current_chosen_date = self.ids.i_0
+
+        
 
 class Content(MDBoxLayout):
     pass
