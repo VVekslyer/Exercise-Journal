@@ -14,7 +14,7 @@ class Home(MDBottomNavigationItem):
         self.current_chosen_date = self.ids.i_0
     
     def set_new_chosen_date(self, *args):
-        self.ids.i_0
+        pass
 
         
 
