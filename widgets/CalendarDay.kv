@@ -1,11 +1,14 @@
-<Date@MDIconButton>:
+##: import CalendarDay widgets.CalendarDay
+
+<Date>:
     id: date_button
     #icon: 'assets/images/calendar-circle.png'
     icon: ''
     #icon_size: 38, 38 #(dp(38), dp(38))
     md_bg_color: (250/255,250/255,250/255, 1)
+    #on_release: root.toggle(self)
 
-<DateLabel@MDLabel>:
+<DateLabel>:
     id: date_label
     name: 'date'
     text: "1"

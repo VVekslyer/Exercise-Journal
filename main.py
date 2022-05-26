@@ -8,9 +8,6 @@ from kivymd.uix.snackbar import Snackbar
 from kivymd.uix.button import MDFlatButton
 from kivymd.uix.dialog import MDDialog
 
-from sys import path
-path.insert(0, '/widgets/')
-path.insert(0, '/src/')
 from widgets.StartingScreen import StartingScreen
 from widgets.SignUpWithEmail import SignUpWithEmail
 from widgets.WhatAreYourGoals import WhatAreYourGoals
