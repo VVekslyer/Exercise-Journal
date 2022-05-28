@@ -41,7 +41,7 @@ version = 0.1
 
 
 # list of things Kivy requires: kivy-deps.angle, kivy-deps.glew, kivy-deps.sdl2, Kivy-Garden, pygments, pypiwin32
-requirements = python3, kivymd==1.0.0, kivy, pillow, cython, kivy-garden, docutils
+requirements = python3, kivymd, kivy, pillow, cython, kivy-garden, docutils
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
