@@ -38,8 +38,10 @@ version = 0.1
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
 # last removed docwriter, importlib-metadata, lockfile, pycparser, python-ntlm, pywin32-ctypes, requests, pypiwin32, pygments
-# fairly sure that our program does not use any of these. ^^^
-requirements = python3, kivymd==1.0.0.dev0, kivy, pillow, cython, kivy-garden
+
+
+# list of things Kivy requires: kivy-deps.angle, kivy-deps.glew, kivy-deps.sdl2, Kivy-Garden, pygments, pypiwin32
+requirements = python3, kivymd, kivy, pillow, cython, kivy-garden, docutils
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
