@@ -43,7 +43,7 @@
 ## Optimization
 
 - [ ] The app is currently around 50 MB.
-  - [ ] The main issue is likely due to many python modules in the buildozer.spec file that are included, but are not actually being used. They take up a lot of space.
+  - [x] The main issue is likely due to many python modules in the buildozer.spec file that are included, but are not actually being used. They take up a lot of space. [RESOLVED]
 - [ ] The app needs to run smoothly and comfortably. It may be worthwhile to look through the kivy docs or ask around the kivy Discord for some strategies and ways to make our app faster.
   - [ ] Python apps in general are fairly slow. We may have to look at some ways to speed up python apps in general.
-- [ ] Attempt resolving [CRITICAL] Warning, too much iteration done before the next frame. <https://www.reddit.com/r/kivy/comments/pmxoft/critical_clock_warning_too_much_iteration_done/>
+- [x] Attempt resolving Critical Warning, too much iteration done before the next frame. <https://www.reddit.com/r/kivy/comments/pmxoft/critical_clock_warning_too_much_iteration_done/>
