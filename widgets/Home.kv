@@ -19,27 +19,29 @@
             size_hint: None, None
             width: root.width * 0.04
         MDTextField:
+            foreground_color: 0,0,0,1
             size_hint: None, None
             width: root.width * 0.06
             font_name: 'assets/fonts/Sofia-Pro-Light.ttf'
             font_size: '28sp'
-            line_color_normal: (0,0,0,1)
-            line_color_focus: (0,0,0,1)
+            line_color: 0,0,0,1
+            line_color_focus: 0,0,0,1
         MDLabel:
             text: '×'
             padding_y: dp(30)
             font_name: 'assets/fonts/Sofia-Pro-Medium.ttf'
             font_size: '48sp'
-            width: root.width * 0.06
+            width: self.width * 0.06
             size_hint: None, None
             pos_hint: {'center_y': 0.5}
         MDTextField:
+            foreground_color: 0,0,0,1
             size_hint: None, None
             width: root.width * 0.06
-            font_size: '28sp'
             font_name: 'assets/fonts/Sofia-Pro-Light.ttf'
-            line_color_normal: (0,0,0,1)
-            line_color_focus: (0,0,0,1)
+            font_size: '28sp'
+            line_color: 0,0,0,1
+            line_color_focus: 0,0,0,1
     MDBoxLayout:
         MDLabel:
             text: '___'
@@ -88,7 +90,7 @@
         MDBoxLayout:
             orientation: 'horizontal'
             size_hint: None, None
-            height: root.height * 0.16
+            height: root.height * 0.14
             width: root.width
             ScrollView:
                 size_hint: None, None
@@ -99,7 +101,7 @@
                 GridLayout:
                     size_hint: None, None
                     rows: 1
-                    col_default_width: root.width*0.15
+                    col_default_width: root.width * 0.15
                     width: self.minimum_width
                     spacing: dp(10)
                     padding: [dp(10), 0, 0, 0]

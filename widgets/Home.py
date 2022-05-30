@@ -16,7 +16,6 @@ class Home(MDBottomNavigationItem):
     def set_new_chosen_date(self, *args):
         pass
 
-        
 
 class Content(MDBoxLayout):
     pass
