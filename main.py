@@ -7,16 +7,16 @@ from kivy.metrics import dp
 from kivymd.uix.snackbar import Snackbar
 from kivymd.uix.button import MDFlatButton
 from kivymd.uix.dialog import MDDialog
-
-from widgets.StartingScreen import StartingScreen
-from widgets.SignUpWithEmail import SignUpWithEmail
-from widgets.WhatAreYourGoals import WhatAreYourGoals
-from widgets.WhatIsYourWeight import WhatIsYourWeight
-from widgets.WhatIsYourHeight import WhatIsYourHeight
-from widgets.SettingsScreen import SettingsScreen
-from widgets.UserSettings import UserSettings
-from widgets.AddWorkout import AddWorkoutScreen
-from src.User import User
+     
+from screens.StartingScreen import StartingScreen
+from screens.SignUpWithEmail import SignUpWithEmail
+from screens.WhatAreYourGoals import WhatAreYourGoals
+from screens.WhatIsYourWeight import WhatIsYourWeight
+from screens.WhatIsYourHeight import WhatIsYourHeight
+from screens.SettingsScreen import SettingsScreen
+from screens.UserSettings import UserSettings
+from screens.AddWorkout import AddWorkoutScreen
+from sources.User import User
 
 Builder.load_file('widgets/main.kv')
 
