@@ -11,7 +11,7 @@ class Home(MDBottomNavigationItem):
         Clock.schedule_once(self.set_default_date)
 
     def set_default_date(self, *args):
-        self.current_chosen_date = self.ids.i_0
+        self.current_chosen_date = self.ids.day1
     
     def set_new_chosen_date(self, *args):
         pass
