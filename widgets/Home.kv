@@ -21,19 +21,17 @@
             size_hint: None, None
             width: root.width
             height: root.height * 0.05
-            padding_x: dp(15)
-            padding_y: dp(10)
             y: root.height
 
         # Calendar
         # A horizontal list of buttons
         MDBoxLayout:
             orientation: 'horizontal'
-            size_hint: None, None
+            #size_hint: None, None
             height: root.height * 0.16
             width: root.width
             ScrollView:
-                size_hint: None, None
+                #size_hint: None, None
                 width: root.width
                 do_scroll_y: False
                 bar_color: [0, 0, 0, 0]
@@ -47,7 +45,7 @@
                     padding: [dp(15), 0, 0, 0]
 
                     CalendarDay:
-                        id: i_0
+                        id: day1
                         DayLabel:
                             text: 'Wed'
                         Date:
@@ -57,7 +55,7 @@
                                 color: 1, 1, 1, 1
 
                     CalendarDay:
-                        id: day1
+                        id: day2
                         DayLabel:
                             text: 'Thu'
                         Date:
@@ -65,7 +63,7 @@
                                 text: '8'
 
                     CalendarDay:
-                        id: day2
+                        id: day3
                         DayLabel:
                             text: 'Fri'
                         Date:
@@ -73,7 +71,7 @@
                                 text: '9'
 
                     CalendarDay:
-                        id: day3
+                        id: day4
                         DayLabel:
                             text: 'Sat'
                         Date:
@@ -81,7 +79,7 @@
                                 text: '10'
 
                     CalendarDay:
-                        id: day4
+                        id: day5
                         DayLabel:
                             text: 'Sun'
                         Date:
@@ -89,7 +87,7 @@
                                 text: '11'
 
                     CalendarDay:
-                        id: day5
+                        id: day6
                         DayLabel:
                             text: 'Mon'
                         Date:
@@ -97,7 +95,7 @@
                                 text: '12'
 
                     CalendarDay:
-                        id: day6
+                        id: day7
                         DayLabel:
                             text: 'Tue'
                         Date:
@@ -105,7 +103,7 @@
                                 text: '13'
 
                     CalendarDay:
-                        id: day7
+                        id: day8
                         DayLabel:
                             text: 'Wed'
                         Date:
@@ -113,7 +111,7 @@
                                 text: '14'
 
                     CalendarDay:
-                        id: day8
+                        id: day9
                         DayLabel:
                             text: 'Thu'
                         Date:
@@ -121,7 +119,7 @@
                                 text: '15'
 
                     CalendarDay:
-                        id: day9
+                        id: day10
                         DayLabel:
                             text: 'Fri'
                         Date:
@@ -129,7 +127,7 @@
                                 text: '16'
 
                     CalendarDay:
-                        id: day10
+                        id: day11
                         DayLabel:
                             text: 'Sat'
                         Date:
@@ -137,7 +135,7 @@
                                 text: '17'
 
                     CalendarDay:
-                        id: day11
+                        id: day12
                         DayLabel:
                             text: 'Sun'
                         Date:
@@ -145,7 +143,7 @@
                                 text: '18'
 
                     CalendarDay:
-                        id: day12
+                        id: day13
                         DayLabel:
                             text: 'Mon'
                         Date:
@@ -153,7 +151,7 @@
                                 text: '19'
 
                     CalendarDay:
-                        id: day13
+                        id: day14
                         DayLabel:
                             text: 'Tue'
                         Date:
@@ -161,7 +159,7 @@
                                 text: '20'
 
                     CalendarDay:
-                        id: day14
+                        id: day15
                         DayLabel:
                             text: 'Wed'
                         Date:

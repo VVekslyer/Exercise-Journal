@@ -96,11 +96,6 @@ class App(MDApp):
             width_mult=4,
         )
 
-        prev = self.sm.current
-        for screen in self.screen_names:
-            self.sm.current = screen
-        self.sm.current = prev
-
         return self.sm
 
     # Menu functions
