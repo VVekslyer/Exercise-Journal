@@ -61,13 +61,13 @@ class App(MDApp):
         #          Home   Workouts  Stats
         #                    
         self.sm = ScreenManager()
+        self.sm.add_widget(HomeScreen(name='home'))
+        self.sm.add_widget(LoginScreen(name='login'))
         self.sm.add_widget(StartingScreen(name='start-screen'))
         self.sm.add_widget(SignUpWithEmail(name='signup-with-email'))
         self.sm.add_widget(WhatAreYourGoals(name='what-are-your-goals'))
         self.sm.add_widget(WhatIsYourWeight(name='what-is-your-weight'))
         self.sm.add_widget(WhatIsYourHeight(name='what-is-your-height'))
-        self.sm.add_widget(LoginScreen(name='login'))
-        self.sm.add_widget(HomeScreen(name='home'))
         self.sm.add_widget(SettingsScreen(name='settings'))
         self.sm.add_widget(UserSettings(name = 'user-settings'))
         self.sm.add_widget(AddWorkoutScreen(name = 'add-workout'))
