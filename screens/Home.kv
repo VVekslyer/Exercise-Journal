@@ -29,14 +29,14 @@
         # A horizontal list of buttons
         MDBoxLayout:
             orientation: 'horizontal'
-            size_hint: 1.0, 0.5
+            size_hint: 1.0, 0.3
             ScrollView:
                 size_hint: 0.5, 1.0
                 do_scroll_y: False
                 bar_color: [0, 0, 0, 0]
                 bar_inactive_color: [0, 0, 0, 0]
                 GridLayout:
-                    size_hint: None, 0.6
+                    size_hint: None, 0.9
                     rows: 1
                     col_default_width: root.width * 0.15
                     width: self.minimum_width
