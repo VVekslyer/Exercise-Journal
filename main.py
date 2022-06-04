@@ -18,7 +18,7 @@ from screens.UserSettings import UserSettings
 from screens.AddWorkout import AddWorkoutScreen
 from sources.User import User
 
-Builder.load_file('widgets/main.kv')
+Builder.load_file('screens/main.kv')
 
 
 # Screen after an account has been created.
