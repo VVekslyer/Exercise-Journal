@@ -36,7 +36,7 @@ class LoginScreen(Screen):
 # Initialize app.
 class App(MDApp):
     Window.set_title('Exercise Journal')
-    Window.size = (360, 740)
+    # Window.size = (360, 740)
     current_user = User(
         name = 'Vitaliy', 
         email = 'vitaly540@gmail.com', 
