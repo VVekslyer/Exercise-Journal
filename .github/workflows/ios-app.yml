@@ -1,8 +1,4 @@
-# This is a basic workflow to help you get started with Actions
-
-name: CI2
-
-# Controls when the workflow will run
+name: iOS Build
 on:
   # Triggers the workflow on push or pull request events but only for the "master" branch
   push:
@@ -35,4 +31,4 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Build for iOS
         run: |
-          toolchain build kivy
+          sudo python ./toolchain.py
