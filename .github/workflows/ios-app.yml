@@ -46,12 +46,11 @@ jobs:
           brew install python pkg-config sdl2 sdl2_image sdl2_ttf sdl2_mixer gstreamer autoconf automake libtool openssl
           pip3 install --user --upgrade buildozer
           python3 -m pip install --user --upgrade pip virtualenv kivy-ios
+          export PATH=$PATH:~/.local/bin/
       
       - name: Build iOS
-        uses: actions/cache@v2
-        with:
-          command: buildozer ios deploy run
-          buildozer_version: master
+        command: buildozer ios deploy run
+          
             
 
       # Runs a set of commands using the runners shell
