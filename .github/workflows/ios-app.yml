@@ -42,7 +42,8 @@ jobs:
       # Runs a single command using the runners shell
       # export PATH=$PATH:~/.local/bin/ <- add this at the end?
       # Creates an xcode project: python toolchain.py create ej
-      - name: Set up iOS
+      - name: Build iOS
+        id: buildozer
         run: | 
           brew install python pkg-config sdl2 sdl2_image sdl2_ttf sdl2_mixer gstreamer autoconf automake libtool openssl
           pip3 install --user --upgrade buildozer
@@ -55,6 +56,12 @@ jobs:
           pip install -e .
           python toolchain.py build kivy python3
           toolchain create ExerciseJournal .
+      
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: package
+          path: ${{ steps.buildozer.outputs.filename }}
             
 
       # Runs a set of commands using the runners shell
