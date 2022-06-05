@@ -41,9 +41,10 @@ jobs:
           brew link libtool
           pip3 install --user --upgrade buildozer
           python3 -m pip install --user --upgrade pip virtualenv kivy-ios
+          buildozer
 
       # Runs a set of commands using the runners shell
       # this command doesn't run: 'buildozer ios deploy run'
-      - name: Build for iOS
-        run: |
-          buildozer
+      # - name: Build for iOS
+      #   run: |
+      #     buildozer
