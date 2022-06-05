@@ -36,13 +36,17 @@ jobs:
 
       # Runs a single command using the runners shell
       # export PATH=$PATH:~/.local/bin/ <- add this at the end?
-      - name: Build iOS
-        uses: ArtemSBulgakov/buildozer-action@v1
+      - name: Set up iOS
         run: | 
           brew install python pkg-config sdl2 sdl2_image sdl2_ttf sdl2_mixer gstreamer autoconf automake libtool openssl
           pip3 install --user --upgrade buildozer
           python3 -m pip install --user --upgrade pip virtualenv kivy-ios
-          buildozer ios deploy run
+      
+      - name: Build iOS
+        uses: ArtemSBulgakov/buildozer-action@v1
+        with:
+          command: buildozer android debug
+          buildozer_version: master
             
 
       # Runs a set of commands using the runners shell
