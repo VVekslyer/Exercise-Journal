@@ -47,6 +47,7 @@ jobs:
           pip3 install --user --upgrade buildozer
           pip3 install --user --upgrade kivy-ios
           python3 -m pip install --user --upgrade pip virtualenv cython kivy-ios
+          python toolchain.py build kivy python3
           export PATH=$PATH:~/.local/bin/
       
       - name: Build iOS
