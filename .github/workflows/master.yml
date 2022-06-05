@@ -32,12 +32,19 @@ jobs:
           path: .buildozer
           key: ${{ runner.os }}-${{ steps.get-date.outputs.date }}-${{ hashFiles('buildozer.spec') }}
 
-      - name: Build with Buildozer
+      - name: Build android
         uses: ArtemSBulgakov/buildozer-action@v1
         id: buildozer
         with:
           command: buildozer android debug
           buildozer_version: master
+
+      - name: Prepare for iOS
+        id: buildozer-ios
+        with:
+          command: brew install pkg-config sdl2 sdl2_image sdl2_ttf sdl2_mixer gstreamer autoconf automake
+          buildozer_version: master
+
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
