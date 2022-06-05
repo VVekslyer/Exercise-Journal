@@ -33,6 +33,11 @@ jobs:
         with:
           path: .buildozer_global
           key: buildozer-global-${{ hashFiles('buildozer.spec') }} # Replace with your path
+        
+      - uses: actions/cache@v2
+        with:
+          path: .buildozer
+          key: ${{ runner.os }}-${{ steps.get-date.outputs.date }}-${{ hashFiles('buildozer.spec') }}
 
       # Runs a single command using the runners shell
       # export PATH=$PATH:~/.local/bin/ <- add this at the end?
@@ -43,7 +48,6 @@ jobs:
           python3 -m pip install --user --upgrade pip virtualenv kivy-ios
       
       - name: Build iOS
-        uses: ArtemSBulgakov/buildozer-action@v1
         with:
           command: buildozer ios deploy run
           buildozer_version: master
