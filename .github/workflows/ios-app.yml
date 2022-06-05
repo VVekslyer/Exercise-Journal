@@ -54,7 +54,7 @@ jobs:
           . venv/bin/activate
           pip install -e .
           python toolchain.py build kivy python3
-          
+          toolchain create ExerciseJournal .
             
 
       # Runs a set of commands using the runners shell
