@@ -49,7 +49,7 @@ jobs:
           export PATH=$PATH:~/.local/bin/
       
       - name: Build iOS
-        command: buildozer ios deploy run
+        run: buildozer ios deploy run
           
             
 
