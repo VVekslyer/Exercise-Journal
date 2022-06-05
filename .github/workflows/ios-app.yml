@@ -53,9 +53,7 @@ jobs:
           . venv/bin/activate
           pip install -e .
           python toolchain.py build kivy python3
-      
-      - name: Build iOS
-        run: buildozer ios deploy run
+          python toolchain.py create ej
           
             
 
