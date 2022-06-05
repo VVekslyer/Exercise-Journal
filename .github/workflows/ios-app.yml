@@ -41,6 +41,7 @@ jobs:
 
       # Runs a single command using the runners shell
       # export PATH=$PATH:~/.local/bin/ <- add this at the end?
+      # Creates an xcode project: python toolchain.py create ej
       - name: Set up iOS
         run: | 
           brew install python pkg-config sdl2 sdl2_image sdl2_ttf sdl2_mixer gstreamer autoconf automake libtool openssl
@@ -53,7 +54,6 @@ jobs:
           . venv/bin/activate
           pip install -e .
           python toolchain.py build kivy python3
-          python toolchain.py create ej
           
             
 
