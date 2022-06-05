@@ -45,7 +45,8 @@ jobs:
         run: | 
           brew install python pkg-config sdl2 sdl2_image sdl2_ttf sdl2_mixer gstreamer autoconf automake libtool openssl
           pip3 install --user --upgrade buildozer
-          python3 -m pip install --user --upgrade pip virtualenv kivy-ios
+          pip3 install --user --upgrade kivy-ios
+          python3 -m pip install --user --upgrade pip virtualenv cython kivy-ios
           export PATH=$PATH:~/.local/bin/
       
       - name: Build iOS
