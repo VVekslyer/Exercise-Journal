@@ -7,7 +7,7 @@ from kivy.metrics import dp
 from kivymd.uix.snackbar import Snackbar
 from kivymd.uix.button import MDFlatButton
 from kivymd.uix.dialog import MDDialog
-     
+
 from screens.StartingScreen import StartingScreen
 from screens.SignUpWithEmail import SignUpWithEmail
 from screens.WhatAreYourGoals import WhatAreYourGoals
@@ -48,7 +48,7 @@ class App(MDApp):
     
     def build(self):
         # These next few lines initialize the screen manager.
-        # Our app is basically a collection of screens.
+        # Our app is a collection of screens.
         # The app can be structured as five separate screens:
         #
         #             Starting Screen
