@@ -21,6 +21,19 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
+      # used to cache dependencies with a timeout
+      - name: Get Date
+        id: get-date
+        run: |
+          echo "::set-output name=date::$(/bin/date -u "+%Y%m%d")"
+        shell: bash
+
+      - name: Cache Buildozer global directory
+        uses: actions/cache@v2
+        with:
+          path: .buildozer_global
+          key: buildozer-global-${{ hashFiles('buildozer.spec') }} # Replace with your path
+
       # Runs a single command using the runners shell
       - name: Install kivy-ios
         run: | 
@@ -30,6 +43,7 @@ jobs:
           python3 -m pip install --user --upgrade pip virtualenv kivy-ios
 
       # Runs a set of commands using the runners shell
+      # this command doesn't run: 'buildozer ios deploy run'
       - name: Build for iOS
         run: |
-          buildozer ios deploy run
+          buildozer
