@@ -48,6 +48,7 @@ jobs:
           python3 -m pip install --user --upgrade pip virtualenv kivy-ios
       
       - name: Build iOS
+        uses: actions/cache@v2
         with:
           command: buildozer ios deploy run
           buildozer_version: master
