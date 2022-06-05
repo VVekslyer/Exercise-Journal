@@ -45,7 +45,7 @@ jobs:
       - name: Build iOS
         uses: ArtemSBulgakov/buildozer-action@v1
         with:
-          command: buildozer android debug
+          command: buildozer ios deploy run
           buildozer_version: master
             
 
