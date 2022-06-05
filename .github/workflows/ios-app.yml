@@ -28,7 +28,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Install kivy-ios
         run: | 
-          brew install python kivy kivymd pkg-config sdl2 sdl2_image sdl2_ttf sdl2_mixer gstreamer autoconf automake
+          brew install python pkg-config sdl2 sdl2_image sdl2_ttf sdl2_mixer gstreamer autoconf automake
           python3 -m pip install --user --upgrade pip virtualenv kivy-ios
 
       # Runs a set of commands using the runners shell
