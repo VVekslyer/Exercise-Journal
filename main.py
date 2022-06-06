@@ -11,6 +11,7 @@ from kivymd.uix.dialog import MDDialog
 from screens.StartingScreen import StartingScreen
 from screens.SignUpWithEmail import SignUpWithEmail
 from screens.WhatAreYourGoals import WhatAreYourGoals
+from screens.WhatIsYourLevel import WhatIsYourLevel
 from screens.WhatIsYourWeight import WhatIsYourWeight
 from screens.WhatIsYourHeight import WhatIsYourHeight
 from screens.SettingsScreen import SettingsScreen
@@ -64,11 +65,12 @@ class App(MDApp):
         self.sm.add_widget(StartingScreen(name='start-screen'))
         self.sm.add_widget(SignUpWithEmail(name='signup-with-email'))
         self.sm.add_widget(WhatAreYourGoals(name='what-are-your-goals'))
+        self.sm.add_widget(WhatIsYourLevel(name='what-is-your-level'))
         self.sm.add_widget(WhatIsYourWeight(name='what-is-your-weight'))
         self.sm.add_widget(WhatIsYourHeight(name='what-is-your-height'))
         self.sm.add_widget(SettingsScreen(name='settings'))
-        self.sm.add_widget(UserSettings(name = 'user-settings'))
-        self.sm.add_widget(AddWorkoutScreen(name = 'add-workout'))
+        self.sm.add_widget(UserSettings(name='user-settings'))
+        self.sm.add_widget(AddWorkoutScreen(name='add-workout'))
         self.sm.current = 'home'
         
         
