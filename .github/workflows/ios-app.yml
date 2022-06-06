@@ -68,7 +68,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: package
-          path: build
+          path: ${{ steps.buildozer.outputs.filename }}
             
       # path was ${{ steps.buildozer.outputs.filename }}
       # Runs a set of commands using the runners shell
