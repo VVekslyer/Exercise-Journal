@@ -64,11 +64,14 @@ jobs:
           python toolchain.py build kivy python3
           toolchain create ExerciseJournal .
       
+        - name: See directory after build
+          run: ls
+
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
           name: package
-          path: ${{ steps.buildozer.outputs.filename }}
+          path: .
             
       # path was ${{ steps.buildozer.outputs.filename }}
       # Runs a set of commands using the runners shell
