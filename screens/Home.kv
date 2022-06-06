@@ -1,7 +1,9 @@
 #: include widgets/CalendarDay.kv
 #: include widgets/CustomDropDown.kv
+#: include widgets/NumField.kv
 #: import CalendarDay widgets.CalendarDay
 #: import CustomDropDown widgets.CustomDropDown
+#: import NumField widgets.NumField
 
 <Home>:
     MDBoxLayout:
@@ -184,6 +186,7 @@
             on_release: app.go_to(self, 'start-screen')
 
 
+
 <Content>:
     orientation: 'vertical'
     adaptive_height: True
@@ -192,47 +195,23 @@
         font_name: 'assets/fonts/Sofia-Pro-Extra-Light.ttf'
         font_size: '24sp'
         padding_x: dp(10)
-    MDBoxLayout:
-        #Padding with textfield not aligned, we can come back to this
-        MDLabel:
-            text: '___'
-            color: (1, 1, 1, 1)
-            size_hint: None, None
-            width: root.width * 0.04
-        MDTextField:
-            foreground_color: 0,0,0,1
-            size_hint: None, None
-            width: root.width * 0.06
-            font_name: 'assets/fonts/Sofia-Pro-Light.ttf'
-            font_size: '28sp'
-            line_color: 0,0,0,1
-            line_color_focus: 0,0,0,1
-        MDLabel:
-            text: '×'
-            padding_y: dp(30)
-            font_name: 'assets/fonts/Sofia-Pro-Medium.ttf'
-            font_size: '48sp'
-            width: self.width * 0.06
-            size_hint: None, None
-            pos_hint: {'center_y': 0.5}
-        MDTextField:
-            foreground_color: 0,0,0,1
-            size_hint: None, None
-            width: root.width * 0.06
-            font_name: 'assets/fonts/Sofia-Pro-Light.ttf'
-            font_size: '28sp'
-            line_color: 0,0,0,1
-            line_color_focus: 0,0,0,1
-    MDBoxLayout:
-        MDLabel:
-            text: '___'
-            color: (1, 1, 1, 1)
-            size_hint: None, None
-            width: root.width * 0.04
-        MDLabel:
-            text: "reps    sets"
-            font_name: 'assets/fonts/Sofia-Pro-Light.ttf'
-            width: root.width * 0.06
+        pos_hint: {'center_y': 0.75}
+    NumField:
+        id: sets_text_field
+        pos_hint: {'center_x': 0.1}
+    MDLabel:
+        text: ' ×'
+        padding_y: dp(30)
+        font_name: 'assets/fonts/Sofia-Pro-Extra-Light.ttf'
+        font_size: '42sp'
+        pos: (dp(50), dp(-25))
+    NumField:
+        id: reps_text_field
+        pos_hint: {'center_x': 0.3}
+    MDLabel:
+        text: "sets          reps"
+        font_name: 'assets/fonts/Sofia-Pro-Medium.ttf'
+        pos_hint: {'center_x': 0.56, 'center_y': 0.01}
 
 
 <ExercisesList>:

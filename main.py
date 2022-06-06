@@ -18,14 +18,12 @@ from screens.UserSettings import UserSettings
 from screens.AddWorkout import AddWorkoutScreen
 from sources.User import User
 
-Builder.load_file('screens/main.kv')
-
+Builder.load_file('main.kv')
 
 # Screen after an account has been created.
 class HomeScreen(Screen):
     def __init__(self, **kw):
         super().__init__(**kw)
-        self.Types_Of_Workouts = ["Leg Day", "Press Day", "Pull Day", "Rest Day"]
 
 # Login and sign up screen.
 class LoginScreen(Screen):

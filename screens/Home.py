@@ -1,5 +1,6 @@
 from kivymd.uix.bottomnavigation import MDBottomNavigationItem
 from kivymd.uix.boxlayout import MDBoxLayout
+from kivymd.uix.floatlayout import MDFloatLayout
 from kivymd.uix.expansionpanel import MDExpansionPanel, MDExpansionPanelOneLine
 from kivy.clock import Clock
 
@@ -17,7 +18,7 @@ class Home(MDBottomNavigationItem):
         pass
 
 
-class Content(MDBoxLayout):
+class Content(MDFloatLayout):
     pass
 
 class ExercisesList(MDBoxLayout):
