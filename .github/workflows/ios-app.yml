@@ -64,8 +64,8 @@ jobs:
           python toolchain.py build kivy python3
           toolchain create ExerciseJournal .
       
-        - name: See directory after build
-          run: ls
+      - name: See directory after build
+        run: ls
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
