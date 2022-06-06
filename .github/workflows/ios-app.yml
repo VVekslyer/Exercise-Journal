@@ -39,10 +39,6 @@ jobs:
           path: .buildozer
           key: ${{ runner.os }}-${{ steps.get-date.outputs.date }}-${{ hashFiles('buildozer.spec') }}
 
-      
-      # Just want to see where are we exactly
-      - name: See directory
-        run: ls
 
       # Runs a single command using the runners shell
       # export PATH=$PATH:~/.local/bin/ <- add this at the end?
@@ -61,21 +57,10 @@ jobs:
           pip install -e .
           python toolchain.py build kivy python3
           toolchain create ExerciseJournal .
-      
-      - name: See kivy-ios directory after build
-        run: |
-          cd kivy-ios
-          ls
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
           name: package
           path: ./kivy-ios
-            
-      # path was ${{ steps.buildozer.outputs.filename }}
-      # Runs a set of commands using the runners shell
-      # this command doesn't run: 'buildozer ios deploy run'
-      # - name: Build for iOS
-      #   run: |
-      #     buildozer
+

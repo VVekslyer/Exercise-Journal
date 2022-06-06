@@ -9,6 +9,7 @@ from kivymd.uix.button import MDFlatButton
 from kivymd.uix.dialog import MDDialog
 
 from screens.StartingScreen import StartingScreen
+from screens.LoginScreen import LoginScreen
 from screens.SignUpWithEmail import SignUpWithEmail
 from screens.WhatAreYourGoals import WhatAreYourGoals
 from screens.WhatIsYourLevel import WhatIsYourLevel
@@ -26,12 +27,6 @@ class HomeScreen(Screen):
     def __init__(self, **kw):
         super().__init__(**kw)
 
-# Login and sign up screen.
-class LoginScreen(Screen):
-    def __init__(self, **kw):
-        super().__init__(**kw)
-
-
 # Initialize app.
 class App(MDApp):
     Window.set_title('Exercise Journal')
@@ -46,6 +41,7 @@ class App(MDApp):
     user_name = current_user.name
     
     def build(self):
+        self.title = 'Exercise Journal'
         # These next few lines initialize the screen manager.
         # Our app is a collection of screens.
         # The app can be structured as five separate screens:
@@ -61,7 +57,7 @@ class App(MDApp):
         #                    
         self.sm = ScreenManager()
         self.sm.add_widget(HomeScreen(name='home'))
-        self.sm.add_widget(LoginScreen(name='login'))
+        self.sm.add_widget(LoginScreen(name='login-screen'))
         self.sm.add_widget(StartingScreen(name='start-screen'))
         self.sm.add_widget(SignUpWithEmail(name='signup-with-email'))
         self.sm.add_widget(WhatAreYourGoals(name='what-are-your-goals'))
