@@ -55,9 +55,8 @@ jobs:
           python3 -m venv venv
           . venv/bin/activate
           pip install -e .
-          python toolchain.py build kivy python3
-          python toolchain.py build kivymd python3
-          python toolchain.py build pillow python3
+          python toolchain.py build kivy pillow python3
+          toolchain pip install kivymd
           toolchain create ExerciseJournal .
 
       - name: Upload artifacts
