@@ -20,6 +20,7 @@
             pos_hint: {'center_y': 0.5}
 
         MDTextField:
+            id: email_textfield
             hint_text: "Please enter a valid email address."
             helper_text_mode: "on_focus"
             color_mode: 'custom'
@@ -31,7 +32,6 @@
             height: dp(20)
             width: dp(275)
             line_color: 0.73, 0.49, 0.28, 1
-            right_action_items: [["arrow-left", lambda x: app.go_back(x, 'what-are-your-goals')]]
             specific_text_color: (0,0,0,1)
             font_name: 'assets/fonts/Sofia-Pro-Light.ttf'
 
@@ -51,6 +51,7 @@
                 pos_hint: {'center_x': 0.5, 'center_y': 0.25}
                 font_name: 'assets/fonts/Sofia-Pro-Medium.ttf'
                 on_release: app.go_to(self, 'what-are-your-goals')
+                on_press: app.current_user.email = root.ids.email_textfield.text
                 line_color: 0.73, 0.49, 0.28, 1
 
             MDTextButton:

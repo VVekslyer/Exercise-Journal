@@ -1,4 +1,3 @@
-#: import FloatingPlusButton widgets.FloatingPlusButton
 #: import Home screens.Home
 #: import Progress widgets.Progress
 #: import SignUpWithEmail screens.SignUpWithEmail
@@ -11,11 +10,13 @@
 #: include screens/WhatIsYourLevel.kv
 #: include screens/WhatIsYourWeight.kv
 #: include screens/WhatIsYourHeight.kv
+#: include screens/WhatIsYourName.kv
 #: include screens/SettingsScreen.kv
 #: include screens/Home.kv
 #: include styles/styles.kv
 
 <HomeScreen>:
+    on_pre_enter: self.ids.home.ids.username_label.text = app.current_user.name + '.'
     BoxLayout:
         orientation: 'vertical'
 
@@ -32,6 +33,7 @@
                 icon: 'home'
 
                 Home:
+                    id: home
 
 
             MDBottomNavigationItem:

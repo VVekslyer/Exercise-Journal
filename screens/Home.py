@@ -26,10 +26,6 @@ class ExercisesList(MDBoxLayout):
         super().__init__(**kw)
         self.workouts = ["Push Day", "Pull Day", "Leg Day", "Cardio Day"]
         Clock.schedule_once(self.generate_panel)
-
-
-    # TODO Change the font and font size using Kivy markup
-    # * https://kivy.org/doc/stable/api-kivy.core.text.markup.html
     
     def generate_panel(self, *args):
         for i in range(4):

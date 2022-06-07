@@ -18,7 +18,8 @@
             height: root.height * 0.05
             padding_x: dp(15)
         MDLabel:
-            text: app.user_name + "."
+            id: username_label
+            text: app.current_user.name + "."
             font_name: 'assets/fonts/Sofia-Pro-Semi-Bold.ttf'
             font_size: '30sp'
             size_hint: None, None

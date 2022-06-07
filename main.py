@@ -3,7 +3,7 @@ from kivy.core.window import Window
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivymd.uix.menu import MDDropdownMenu
-from kivy.metrics import dp 
+from kivy.metrics import dp
 from kivymd.uix.snackbar import Snackbar
 from kivymd.uix.button import MDFlatButton
 from kivymd.uix.dialog import MDDialog
@@ -15,6 +15,7 @@ from screens.WhatAreYourGoals import WhatAreYourGoals
 from screens.WhatIsYourLevel import WhatIsYourLevel
 from screens.WhatIsYourWeight import WhatIsYourWeight
 from screens.WhatIsYourHeight import WhatIsYourHeight
+from screens.WhatIsYourName import WhatIsYourName
 from screens.SettingsScreen import SettingsScreen
 from screens.UserSettings import UserSettings
 from screens.AddWorkout import AddWorkoutScreen
@@ -32,13 +33,13 @@ class App(MDApp):
     Window.set_title('Exercise Journal')
     #Window.size = (360, 740)
     current_user = User(
-        name = 'Vitaliy', 
+        name = '',
+        gender = '', 
         email = 'vitaly540@gmail.com', 
-        goals = ['Strength'], 
-        level = 'Beginner', 
-        weight = 65,
-        height = 180)
-    user_name = current_user.name
+        goals = '', 
+        level = '', 
+        weight = 0,
+        height = 0)
     
     def build(self):
         self.title = 'Exercise Journal'
@@ -47,7 +48,7 @@ class App(MDApp):
         # The app can be structured as five separate screens:
         #
         #             Starting Screen
-        #         (Email, Height, Weight)
+        #      (Email, Height, Weight, Name)
         #                    |
         #                  Login
         #                    |
@@ -56,18 +57,19 @@ class App(MDApp):
         #          Home   Workouts  Stats
         #                    
         self.sm = ScreenManager()
+        self.sm.add_widget(StartingScreen(name='start-screen'))
         self.sm.add_widget(HomeScreen(name='home'))
         self.sm.add_widget(LoginScreen(name='login-screen'))
-        self.sm.add_widget(StartingScreen(name='start-screen'))
         self.sm.add_widget(SignUpWithEmail(name='signup-with-email'))
         self.sm.add_widget(WhatAreYourGoals(name='what-are-your-goals'))
         self.sm.add_widget(WhatIsYourLevel(name='what-is-your-level'))
         self.sm.add_widget(WhatIsYourWeight(name='what-is-your-weight'))
         self.sm.add_widget(WhatIsYourHeight(name='what-is-your-height'))
+        self.sm.add_widget(WhatIsYourName(name='what-is-your-name'))
         self.sm.add_widget(SettingsScreen(name='settings'))
         self.sm.add_widget(UserSettings(name='user-settings'))
         self.sm.add_widget(AddWorkoutScreen(name='add-workout'))
-        self.sm.current = 'home'
+        self.sm.current = 'start-screen'
         
         
         self.screen_names = [
@@ -91,7 +93,7 @@ class App(MDApp):
             items=triple_dots_menu_items,
             width_mult=4,
         )
-
+        
         return self.sm
 
     # Menu functions
