@@ -1,8 +1,5 @@
 <SignUpWithEmail>:
-    MDBoxLayout:
-        orientation: 'vertical'
-        md_bg_color: (1, 1, 1, 1)
-        #size_hint:root.height,root.width
+    WhiteBackground:
 
     MDBoxLayout:
         orientation: 'vertical'
@@ -14,54 +11,33 @@
 
         H4:
             text: "    What is \n    your email?"
-            size_hint: None, None
             width: root.width
-            height: root.height * 0.26
+            height: root.height * 0.1
             pos_hint: {'center_y': 0.5}
 
-        MDTextField:
+        AppTextField:
             id: email_textfield
             hint_text: "Please enter a valid email address."
-            helper_text_mode: "on_focus"
-            color_mode: 'custom'
-            line_color_focus: 0, 0, 0, 1
-            line_color_normal: 0, 0, 0, 1
-            valign: 'top'
             pos_hint: {'center_x': 0.5}
-            size_hint: None, None
             height: dp(20)
             width: dp(275)
-            line_color: 0.73, 0.49, 0.28, 1
-            specific_text_color: (0,0,0,1)
-            font_name: 'assets/fonts/Sofia-Pro-Light.ttf'
 
         MDBoxLayout:
             orientation: 'vertical'
-            #size_hint: 1.0, 0.5
             pos_hint: {'center_x': 0.5, 'center_y': 0.5}
             spacing: 20
 
-            MDFillRoundFlatButton:
+            AppButton:
                 text: "Continue"
-                text_color: 1, 1, 1, 1
-                md_bg_color: 0.73, 0.49, 0.28, 1
-                font_size: "18sp"
-                size_hint: None, None
                 width: root.width * 0.8
                 pos_hint: {'center_x': 0.5, 'center_y': 0.25}
-                font_name: 'assets/fonts/Sofia-Pro-Medium.ttf'
                 on_release: app.go_to(self, 'what-are-your-goals')
                 on_press: app.current_user.email = root.ids.email_textfield.text
-                line_color: 0.73, 0.49, 0.28, 1
 
-            MDTextButton:
+            AppTextButton:
                 text: "Skip For Now"
-                color: (0, 0, 0, 1)
-                valign: 'center'
                 pos_hint: {'center_x': 0.5}
-                size_hint: None,None
-                font_size: "12sp"
-                font_name: 'assets/fonts/Sofia-Pro-Light.ttf'
+                size_hint: None, None
                 on_release: app.go_to(self, 'what-are-your-goals')
 
         MDBottomAppBar:
