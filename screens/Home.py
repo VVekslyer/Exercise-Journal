@@ -19,7 +19,8 @@ class Home(MDBottomNavigationItem):
 
 
 class Content(MDFloatLayout):
-    pass
+    def __init__(self, **kw):
+        super().__init__(**kw)
 
 class ExercisesList(MDBoxLayout):
     def __init__(self, **kw):

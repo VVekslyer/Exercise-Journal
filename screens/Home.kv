@@ -189,30 +189,32 @@
 
 
 <Content>:
-    orientation: 'vertical'
-    adaptive_height: True
     MDLabel:
         text: 'Back Squats'
         font_name: 'assets/fonts/Sofia-Pro-Extra-Light.ttf'
         font_size: '24sp'
         padding_x: dp(10)
-        pos_hint: {'center_y': 0.75}
+        pos_hint: {'center_y': 0.5}
     NumField:
-        id: sets_text_field
-        pos_hint: {'center_x': 0.1}
+        id: sets_num_field
+        x: dp(25)
     MDLabel:
         text: ' ×'
         padding_y: dp(30)
         font_name: 'assets/fonts/Sofia-Pro-Extra-Light.ttf'
         font_size: '42sp'
-        pos: (dp(50), dp(-25))
+        pos: (dp(50), dp(-35))
     NumField:
-        id: reps_text_field
+        id: reps_num_field
         pos_hint: {'center_x': 0.3}
     MDLabel:
-        text: "sets          reps"
+        text: "sets"
         font_name: 'assets/fonts/Sofia-Pro-Medium.ttf'
         pos_hint: {'center_x': 0.56, 'center_y': 0.01}
+    MDLabel:
+        text: "reps"
+        font_name: 'assets/fonts/Sofia-Pro-Medium.ttf'
+        pos_hint: {'center_x': 0.76, 'center_y': 0.01}
 
 
 <ExercisesList>:
