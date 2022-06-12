@@ -24,7 +24,6 @@ from sources.User import User
 
 
 from pymongo import MongoClient, errors
-import datetime
 
 # Global Variables for MongoDB
 DOMAIN = 'localhost:'
@@ -37,7 +36,7 @@ try:
 
     client = MongoClient("mongodb+srv://PaulColonia:blabla33@journaldb.qf9cz.mongodb.net/?retryWrites=true&w=majority")  
 
-    db = client.gettingStarted
+    db = client.UserInfo
     people = db.people
 
 except errors.ServerSelectionTimeoutError as err:
