@@ -21,6 +21,31 @@ from screens.UserSettings import UserSettings
 from screens.AddWorkout import AddWorkoutScreen
 from sources.User import User
 
+
+
+from pymongo import MongoClient, errors
+import datetime
+
+# Global Variables for MongoDB
+DOMAIN = 'localhost:'
+PORT = 27017
+
+
+# TODO: Make connections to MongoDB asynchronous.
+# use a try-except indentation to catch MongoClient() errors
+try:
+
+    client = MongoClient("mongodb+srv://PaulColonia:blabla33@journaldb.qf9cz.mongodb.net/?retryWrites=true&w=majority")  
+
+    db = client.gettingStarted
+    people = db.people
+
+except errors.ServerSelectionTimeoutError as err:
+    # set the client and DB name list to 'None' and `[]` if exception
+    print("ERROR")
+    print (err)
+
+  
 Builder.load_file('main.kv')
 
 # Screen after an account has been created.
@@ -30,8 +55,8 @@ class HomeScreen(Screen):
 
 # Initialize app.
 class App(MDApp):
-    Window.set_title('Exercise Journal')
-    #Window.size = (360, 740)
+    Window.title = 'Exercise Journal'
+    Window.size = (360, 740)
     current_user = User(
         name = '',
         gender = '', 
@@ -88,7 +113,7 @@ class App(MDApp):
             "height": dp(56),
             "on_release": lambda x=f"{i}": self.vertical_menu_item_pressed(x),
         } for i in menu_names]
-
+        
         self.menu = MDDropdownMenu(
             items=triple_dots_menu_items,
             width_mult=4,
@@ -96,6 +121,22 @@ class App(MDApp):
         
         return self.sm
 
+
+    def insert_new_user(self):
+        userDocument = {
+          "name" : self.current_user.name,
+          "gender" : None,
+          "email" : self.current_user.email,
+          "goals" : self.current_user.goals, 
+          "level" : self.current_user.level, 
+          "weight" : self.current_user.weight,
+          "height" : self.current_user.height
+        }
+        if db.people.count_documents(userDocument, limit = 1) != 0:
+            print("Error")
+        else:
+            people.insert_one(userDocument)
+        
     # Menu functions
     def callback(self, button):
         self.menu.caller = button
