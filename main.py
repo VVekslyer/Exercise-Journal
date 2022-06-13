@@ -19,6 +19,7 @@ from screens.WhatIsYourName import WhatIsYourName
 from screens.SettingsScreen import SettingsScreen
 from screens.UserSettings import UserSettings
 from screens.AddWorkout import AddWorkoutScreen
+from screens.LoadingScreen import LoadingScreen
 from sources.User import User
 
 from pymongo import MongoClient, errors
@@ -90,6 +91,7 @@ class App(MDApp):
         self.sm.add_widget(SettingsScreen(name='settings'))
         self.sm.add_widget(UserSettings(name='user-settings'))
         self.sm.add_widget(AddWorkoutScreen(name='add-workout'))
+        self.sm.add_widget(LoadingScreen(name='loading-screen'))
         self.sm.current = 'start-screen'
         
         

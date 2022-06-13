@@ -1,3 +1,4 @@
+from kivy.lang import Builder
 from kivy.uix.screenmanager import Screen
 from kivy.animation import Animation
 
@@ -8,3 +9,4 @@ class StartingScreen(Screen):
     def move_text_upwards(self, widget, *args):
         animate = Animation(y = 250, duration = 2)
         animate.start(widget)
+
