@@ -6,6 +6,11 @@
 #: import NumField widgets.NumField
 
 <Home>:
+    MDFloatLayout:
+        MDIconButton:
+            icon: 'dots-vertical'
+            pos_hint: {'center_x': 0.9, 'center_y': 0.95}
+            on_press: app.callback(self)
     MDBoxLayout:
         orientation: 'vertical'
         MDLabel:

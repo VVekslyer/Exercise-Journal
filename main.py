@@ -29,7 +29,7 @@ PORT = 27017
 
 
 # TODO Make connections to MongoDB asynchronous.
-# TODO [HIGHLY IMPORTANT] User Motor instead of Pymongo, because Motor is intended for Asynchronous applications.
+# TODO [HIGHLY IMPORTANT] User Motor instead of Pymongo, because Motor is intended for asynchronous applications.
 # use a try-except indentation to catch MongoClient() errors
 try:
     client = MongoClient("mongodb+srv://PaulColonia:blabla33@journaldb.qf9cz.mongodb.net/?retryWrites=true&w=majority")  
@@ -41,7 +41,6 @@ except errors.ServerSelectionTimeoutError as err:
     # set the client and DB name list to 'None' and `[]` if exception
     print("ERROR")
     print (err)
-
   
 Builder.load_file('main.kv')
 
@@ -99,7 +98,7 @@ class App(MDApp):
         ]
 
         menu_names = [
-            "Settings","Info and Feedback", "Log Out"
+            "Settings", "Info", "Log Out"
         ]
 
         self.nameBoxes = ["Today", "Tomorrow", "Day After"]
@@ -146,14 +145,14 @@ class App(MDApp):
     def vertical_menu_item_pressed(self, text_item):
         self.menu.dismiss()
 
-        if text_item == "Settings":
+        if text_item == 'Settings':
             self.sm.transition.direction = 'left'
             self.sm.current = 'settings'
-        elif text_item == "User Settings":
+        elif text_item == 'User Settings':
             pass
-        elif text_item == "Info and Feedback":
+        elif text_item == 'Info and Feedback':
             pass
-        elif text_item == "Log Out":
+        elif text_item == 'Log Out':
             self.show_logout_dialog()
 
     # Transitions
@@ -164,6 +163,10 @@ class App(MDApp):
     def go_back(self, button, screen):
         self.sm.transition.direction = 'right'
         self.sm.current = screen
+    
+    def log_out(self, *args):
+        self.sm.transition.direction = 'right'
+        self.sm.current = 'start-screen'
 
     def show_logout_dialog(self, *args):
         self.dialog = MDDialog(
@@ -172,12 +175,14 @@ class App(MDApp):
                 MDFlatButton(
                     text="YES",
                     theme_text_color="Custom",
-                    text_color=(1, 0, 0, 1),
+                    text_color=(0.73, 0.49, 0.28, 1),
+                    on_release = self.log_out,
+                    on_press = self.dismiss_dialog
                 ),
                 MDFlatButton(
                     text="NO",
                     theme_text_color="Custom",
-                    text_color=(1, 0, 0, 1),
+                    text_color=(0.73, 0.49, 0.28, 1),
                     on_release = self.dismiss_dialog,
                 ),
             ],
