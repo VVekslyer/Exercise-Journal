@@ -131,7 +131,7 @@ class App(MDApp):
           "height" : self.current_user.height
         }
         if db.people.count_documents(userDocument, limit = 1) != 0:
-            print("Error")
+            print("Error, user already exists.")
         else:
             people.insert_one(userDocument)
         
