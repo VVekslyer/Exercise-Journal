@@ -21,8 +21,6 @@ from screens.UserSettings import UserSettings
 from screens.AddWorkout import AddWorkoutScreen
 from sources.User import User
 
-
-
 from pymongo import MongoClient, errors
 import datetime
 
@@ -31,10 +29,10 @@ DOMAIN = 'localhost:'
 PORT = 27017
 
 
-# TODO: Make connections to MongoDB asynchronous.
+# TODO Make connections to MongoDB asynchronous.
+# TODO [HIGHLY IMPORTANT] User Motor instead of Pymongo, because Motor is intended for Asynchronous applications.
 # use a try-except indentation to catch MongoClient() errors
 try:
-
     client = MongoClient("mongodb+srv://PaulColonia:blabla33@journaldb.qf9cz.mongodb.net/?retryWrites=true&w=majority")  
 
     db = client.gettingStarted
