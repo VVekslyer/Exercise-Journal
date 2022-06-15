@@ -14,7 +14,7 @@
 
 <HomeScreen>:
     on_pre_enter: self.ids.home.ids.username_label.text = app.current_user.name + '.'
-    on_pre_enter: app.db_insert_new_user()
+    #on_pre_enter: app.db_insert_new_user()
     BoxLayout:
         orientation: 'vertical'
 

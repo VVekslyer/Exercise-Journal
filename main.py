@@ -29,7 +29,7 @@ DOMAIN = 'localhost:'
 PORT = 27017
 
 # TODO Make connections to MongoDB asynchronous.
-# TODO [HIGHLY IMPORTANT] User Motor instead of Pymongo, because Motor is intended for asynchronous applications.
+# TODO [HIGHLY IMPORTANT] Use Motor instead of Pymongo, because Motor is intended for asynchronous applications.
 # use a try-except indentation to catch MongoClient() errors
 try:
     client = MongoClient("mongodb+srv://PaulColonia:blabla33@journaldb.qf9cz.mongodb.net/?retryWrites=true&w=majority")  
