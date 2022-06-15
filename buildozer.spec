@@ -51,7 +51,7 @@ requirements = python3, kivymd, kivy, pymongo, pymongo["srv"], pillow, cython, k
 #presplash.filename = %(source.dir)s/data/presplash.png
 
 # (str) Icon of the application
-icon.filename = assets/images/ej-icon.png
+icon.filename = ./assets/images/ej-icon.png
 
 # (str) Supported orientation (one of landscape, sensorLandscape, portrait or all)
 orientation = portrait
