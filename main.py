@@ -28,7 +28,6 @@ from pymongo import MongoClient, errors
 DOMAIN = 'localhost:'
 PORT = 27017
 
-
 # TODO Make connections to MongoDB asynchronous.
 # TODO [HIGHLY IMPORTANT] User Motor instead of Pymongo, because Motor is intended for asynchronous applications.
 # use a try-except indentation to catch MongoClient() errors
@@ -41,9 +40,7 @@ try:
 except errors.ServerSelectionTimeoutError as err:
     # set the client and DB name list to 'None' and `[]` if exception
     print("ERROR")
-    print (err)
-  
-Builder.load_file('main.kv')
+    print(err)
 
 # Screen after an account has been created.
 class HomeScreen(Screen):
@@ -100,7 +97,7 @@ class App(MDApp):
         ]
 
         menu_names = [
-            "Settings", "Info", "Log Out"
+            "Settings", "Info","Tutorial", "Log Out"
         ]
 
         self.nameBoxes = ["Today", "Tomorrow", "Day After"]
@@ -120,7 +117,7 @@ class App(MDApp):
         return self.sm
 
 
-    def insert_new_user(self):
+    def db_insert_new_user(self):
         userDocument = {
           "name" : self.current_user.name,
           "gender" : None,
@@ -196,6 +193,7 @@ class App(MDApp):
         self.dialog.dismiss(force=True)
         self.sm.current = 'home'
 
+Builder.load_file('main.kv')
 
 if __name__ == '__main__':
     App().run()
