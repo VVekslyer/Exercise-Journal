@@ -54,7 +54,7 @@ class HomeScreen(Screen):
 # Initialize app.
 class App(MDApp):
     Window.title = 'Exercise Journal'
-    Window.size = (360, 740)
+    #Window.size = (360, 740)
     current_user = User(
         name = '',
         gender = '', 
