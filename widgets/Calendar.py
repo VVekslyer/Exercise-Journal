@@ -13,3 +13,4 @@ class DateLabel(MDLabel):
 class CalendarDay(Widget):
     def toggle(self, icon_button, *args):
         self.ids.date_button.icon = 'assets/images/calendar-circle.png'
+

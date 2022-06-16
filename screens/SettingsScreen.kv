@@ -1,14 +1,45 @@
 <SettingsScreen>:
-    BoxLayout:
-        oritentation: 'vertical'
-        size_hint: None, None
+    MDBoxLayout:
+        orientation: 'vertical'
+
         MDToolbar:
             title: "Settings"
-            font_name: 'assets/fonts/Inter-Medium.ttf'
-            left_action_items: [["arrow-left", lambda x : app.go_to_home(x)]]
+            left_action_items: [["arrow-left", lambda x : app.go_back(self, 'home')]]
             md_bg_color: app.theme_cls.bg_light
             specific_text_color: (0,0,0,1)
             icon_color: (0,1,0,1)
             elevation: 0
 
-        MDBottomNavigation:
+        ScrollView:
+
+            MDList:
+
+                OneLineAvatarIconListItem:
+                    text: 'See code on GitHub.'
+                    on_release: print("Click!")
+
+                    IconLeftWidget:
+                        icon: 'github'
+
+                OneLineAvatarIconListItem:
+                    text: 'Dark mode.'
+                    on_release: print("Click 2!")
+
+                    IconLeftWidget:
+                        text: 'Change to dark mode.'
+                        icon: 'brightness-6'
+
+                TwoLineAvatarListItem:
+                    text: "Reset stats"
+                    secondary_text: "This will revert your entire profile."
+                    IconLeftWidget:
+                        icon: 'restart'
+
+                ThreeLineAvatarListItem:
+                    text: 'App Version'
+                    secondary_text: 'ej v.0.1beta build-arm64-v8a_armeabi-v7a_x86'
+                    tertiary_text: 'Built on June 15, 2022, 7:31pm'
+                    IconLeftWidget:
+                        icon: 'android'
+
+        MDBottomAppBar:

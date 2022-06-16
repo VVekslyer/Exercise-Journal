@@ -41,6 +41,7 @@ version = 0.1
 
 
 # list of things Kivy requires: kivy-deps.angle, kivy-deps.glew, kivy-deps.sdl2, Kivy-Garden, pygments, pypiwin32
+# maybe for pymongo, it needs to be pymongo[\"srv\"] ?
 requirements = python3, kivymd, kivy, pymongo, pymongo["srv"], dnspython, pillow, cython, kivy-garden, docutils
 
 # (str) Custom source folders for requirements

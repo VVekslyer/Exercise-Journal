@@ -22,6 +22,10 @@ from screens.AddWorkout import AddWorkoutScreen
 from screens.LoadingScreen import LoadingScreen
 from sources.User import User
 
+import dns.resolver
+dns.resolver.default_resolver=dns.resolver.Resolver(configure=False)
+dns.resolver.default_resolver.nameservers=['8.8.8.8'] # this is a google public dns server,  use whatever dns server you like here
+# as a test, dns.resolver.query('www.google.com') should return an answer, not an exception
 from pymongo import MongoClient, errors
 
 # Global Variables for MongoDB
@@ -90,11 +94,6 @@ class App(MDApp):
         self.sm.add_widget(AddWorkoutScreen(name='add-workout'))
         self.sm.add_widget(LoadingScreen(name='loading-screen'))
         self.sm.current = 'start-screen'
-        
-        
-        self.screen_names = [
-            'start-screen', 'signup-with-email', 'what-are-your-goals', 'what-are-your-goals', 'what-is-your-weight', 'what-is-your-height', 'login', 'home', 'settings', 'user-settings'
-        ]
 
         menu_names = [
             "Settings", "Info","Tutorial", "Log Out"
