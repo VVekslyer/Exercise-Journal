@@ -31,23 +31,24 @@ Builder.load_string('''
     AppButton:
         text: "Sign Up"
         width: root.width * 0.8
-        height: root.width * 0.12
+        height: root.height * 0.06
+        size_hint: None, None
+        size_hint_max: (dp(100), dp(5))
         pos_hint: {'center_x': 0.5, 'center_y': 0.3}
         on_release: app.go_to(self, 'signup-with-email')
 
-    MDLabel:
+    Text:
         text: "Or"
         color: (1, 1, 1, 1)
         halign: 'center'
         pos_hint: {'center_y': 0.23}
-        font_size: "12sp"
-        font_name: 'assets/fonts/Sofia-Pro-Light.ttf'
 
     AppIconButton:
-        text: "         Log in with Google"
+        text: "      Log in with Google"
         icon: "google"
         width: root.width * 0.8
-        height: root.width * 0.12
+        height: root.height * 0.06
+        size_hint_max: (dp(100), dp(5))
         pos_hint: {'center_x': 0.5, 'center_y': 0.16}
         on_release: app.go_to(self, 'loading-screen')
 

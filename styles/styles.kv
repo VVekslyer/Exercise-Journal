@@ -10,6 +10,10 @@
     font_size: '40sp'
     font_name: 'assets/fonts/Sofia-Pro-Semi-Bold.ttf'
 
+<H2@MDLabel>:
+    font_style: 'H2'
+    font_name: 'assets/fonts/Sofia-Pro-Semi-Bold.ttf'
+
 <WhiteAppButton@MDRoundFlatButton>:
     text_color: 0.73, 0.49, 0.28, 1
     md_bg_color: 1, 1, 1, 1
@@ -24,7 +28,6 @@
 <AppButton@MDFillRoundFlatButton>:
     text_color: 1, 1, 1, 1
     md_bg_color: 0.73, 0.49, 0.28, 1
-    size_hint: None, None
     #width: root.width * 0.8
     font_size: '18sp'
     font_name: 'assets/fonts/Sofia-Pro-Medium.ttf'
@@ -54,10 +57,14 @@
 <Paragraph@MDLabel>:
     markdown: True
     text_size: self.size
-    line_height: 1.5
+    line_height: 1
     color: (0,0,0,1)
     halign: 'left'
     font_size: "18sp"
+    font_name: 'assets/fonts/Sofia-Pro-Light.ttf'
+
+<Text@MDLabel>:
+    font_size: "12sp"
     font_name: 'assets/fonts/Sofia-Pro-Light.ttf'
 
 <AppTextField@MDTextField>:
