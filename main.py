@@ -129,6 +129,7 @@ class App(MDApp):
         if db.people.count_documents(userDocument, limit = 1) != 0:
             print("Error, user already exists.")
         else:
+            print(self.current_user.name, 'inserted into the database!')
             people.insert_one(userDocument)
         
     # Menu functions
