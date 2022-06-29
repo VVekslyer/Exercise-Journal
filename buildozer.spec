@@ -1,7 +1,5 @@
 [app]
 
-# TODO [IMPORTANT] Really need to make my own Android Build GitHub Action.
-
 # (str) Title of your application
 title = Exercise Journal
 
@@ -44,7 +42,7 @@ version = 0.1
 
 # list of things Kivy requires: kivy-deps.angle, kivy-deps.glew, kivy-deps.sdl2, Kivy-Garden, pygments, pypiwin32
 # maybe for pymongo, it needs to be pymongo[\"srv\"] ?
-requirements = python3, kivymd, kivy, pymongo, pymongo["srv"], dnspython, pillow, cython, kivy-garden
+requirements = python3, kivymd, kivy, pymongo, pymongo["srv"], dnspython, pillow, cython, kivy-garden, docutils
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
