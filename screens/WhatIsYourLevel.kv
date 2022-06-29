@@ -15,42 +15,32 @@
             orientation: 'vertical'
             spacing: 20
 
-
-            MDRoundFlatButton:
+            WhiteAppButton:
                 text: "Beginner"
                 text_color: 0.73, 0.49, 0.28, 1
-                md_bg_color: 1, 1, 1, 1
-                font_size: "18sp"
                 size_hint: None, None
                 width: root.width * 0.8
                 height: dp(25)
                 pos_hint: {'center_x': 0.5}
-                font_name: 'assets/fonts/Sofia-Pro-Medium.ttf'
-                line_color: 0.73, 0.49, 0.28, 1
+                on_release: app.current_user.level = 'Beginner'
 
-            MDRoundFlatButton:
+            WhiteAppButton:
                 text: "Intermediate"
                 text_color: 0.73, 0.49, 0.28, 1
-                md_bg_color: 1, 1, 1, 1
-                font_size: "18sp"
                 size_hint: None, None
                 width: root.width * 0.8
                 height: dp(25)
                 pos_hint: {'center_x': 0.5}
-                font_name: 'assets/fonts/Sofia-Pro-Medium.ttf'
-                line_color: 0.73, 0.49, 0.28, 1
+                on_release: app.current_user.level = 'Intermediate'
 
-            MDRoundFlatButton:
+            WhiteAppButton:
                 text: "Advanced"
                 text_color: 0.73, 0.49, 0.28, 1
-                md_bg_color: 1, 1, 1, 1
-                font_size: "18sp"
                 size_hint: None, None
                 width: root.width * 0.8
                 height: dp(25)
                 pos_hint: {'center_x': 0.5}
-                font_name: 'assets/fonts/Sofia-Pro-Medium.ttf'
-                line_color: 0.73, 0.49, 0.28, 1
+                on_release: app.current_user.level = 'Advanced'
 
         MDBoxLayout:
             orientation: 'vertical'

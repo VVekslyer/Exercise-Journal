@@ -22,23 +22,22 @@ from screens.AddWorkout import AddWorkoutScreen
 from screens.LoadingScreen import LoadingScreen
 from sources.User import User
 
+# This import is used to establish DNS server connections with Android and iOS devices.
 import dns.resolver
-dns.resolver.default_resolver=dns.resolver.Resolver(configure=False)
+dns.resolver.default_resolver = dns.resolver.Resolver(configure=False)
 dns.resolver.default_resolver.nameservers=['8.8.8.8'] # this is a google public dns server,  use whatever dns server you like here
 # as a test, dns.resolver.query('www.google.com') should return an answer, not an exception
 from pymongo import MongoClient, errors
+import motor.motor_asyncio
+import asyncio
+import datetime
 
-# Global Variables for MongoDB
-DOMAIN = 'localhost:'
-PORT = 27017
-
-# TODO Make connections to MongoDB asynchronous.
-# TODO [HIGHLY IMPORTANT] Use Motor instead of Pymongo, because Motor is intended for asynchronous applications.
 # use a try-except indentation to catch MongoClient() errors
 try:
-    client = MongoClient("mongodb+srv://PaulColonia:blabla33@journaldb.qf9cz.mongodb.net/?retryWrites=true&w=majority")  
+    client = motor.motor_asyncio.AsyncIOMotorClient("mongodb+srv://PaulColonia:blabla33@journaldb.qf9cz.mongodb.net/?retryWrites=true&w=majority&ssl=true&ssl_cert_reqs=CERT_NONE")
 
     db = client.UserInfo
+    colection = db.test_collection
     people = db.people
 
 except errors.ServerSelectionTimeoutError as err:
@@ -58,11 +57,12 @@ class App(MDApp):
     current_user = User(
         name = '',
         gender = '', 
-        email = 'vitaly540@gmail.com', 
+        email = '', 
         goals = '', 
         level = '', 
         weight = 0,
         height = 0)
+    user_is_making_new_account = True
     
     def build(self):
         self.title = 'Exercise Journal'
@@ -114,23 +114,7 @@ class App(MDApp):
         )
         
         return self.sm
-
-
-    def db_insert_new_user(self):
-        userDocument = {
-          "name" : self.current_user.name,
-          "gender" : None,
-          "email" : self.current_user.email,
-          "goals" : self.current_user.goals, 
-          "level" : self.current_user.level, 
-          "weight" : self.current_user.weight,
-          "height" : self.current_user.height
-        }
-        if db.people.count_documents(userDocument, limit = 1) != 0:
-            print("Error, user already exists.")
-        else:
-            print(self.current_user.name, 'inserted into the database!')
-            people.insert_one(userDocument)
+        
         
     # Menu functions
     def callback(self, button):
@@ -192,6 +176,29 @@ class App(MDApp):
     def dismiss_dialog(self, *args):
         self.dialog.dismiss(force=True)
         self.sm.current = 'home'
+
+    def clientLoop(self):
+        loop = client.get_io_loop()
+        loop.run_until_complete(self.db_insert_new_user())
+      
+    async def db_insert_new_user(self):
+        if self.user_is_making_new_account:
+            userDocument = {
+              "name" : self.current_user.name,
+              "gender" : None,
+              "email" : self.current_user.email,
+              "goals" : self.current_user.goals, 
+              "level" : self.current_user.level, 
+              "weight" : self.current_user.weight,
+              "height" : self.current_user.height
+            }
+            if await db.test_collection.find_one({"name": userDocument["name"]}):
+                print("Same user was found.")
+            else:
+                await db.test_collection.insert_one(userDocument)
+                print(self.current_user.name, 'inserted into the database!')
+                self.user_is_making_new_account = False
+                
 
 Builder.load_file('main.kv')
 

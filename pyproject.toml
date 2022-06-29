@@ -27,4 +27,6 @@ lxml = "^4.9.0"
 keyring = "^23.6.0"
 ordereddict = "^1.1"
 tornado = "^6.1"
+dnspython = "^2.2.1"
+motor = "^3.0.0"
 [tool.poetry.dev-dependencies]
