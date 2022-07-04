@@ -2,6 +2,9 @@ from kivymd.uix.bottomnavigation import MDBottomNavigationItem
 from kivymd.uix.boxlayout import MDBoxLayout
 from kivymd.uix.floatlayout import MDFloatLayout
 from kivymd.uix.expansionpanel import MDExpansionPanel, MDExpansionPanelOneLine
+from widgets.AddWorkoutBottomSheet import AddWorkoutBottomSheet
+from kivymd.uix.bottomsheet import MDCustomBottomSheet
+from kivymd.toast import toast
 from kivy.clock import Clock
 
 class Home(MDBottomNavigationItem):
@@ -16,6 +19,13 @@ class Home(MDBottomNavigationItem):
     
     def set_new_chosen_date(self, *args):
         pass
+
+    def callback_for_menu_items(self, *args):
+        toast(args[0])
+
+    def open_add_exercise_bottom_sheet(self):
+        bottom_sheet_menu = MDCustomBottomSheet(screen=AddWorkoutBottomSheet())
+        bottom_sheet_menu.open()
 
 
 class Content(MDFloatLayout):

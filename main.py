@@ -93,7 +93,7 @@ class App(MDApp):
         self.sm.add_widget(UserSettings(name='user-settings'))
         self.sm.add_widget(AddWorkoutScreen(name='add-workout'))
         self.sm.add_widget(LoadingScreen(name='loading-screen'))
-        self.sm.current = 'start-screen'
+        self.sm.current = 'home'
 
         menu_names = [
             "Settings", "Info","Tutorial", "Log Out"
