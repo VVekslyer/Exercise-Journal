@@ -21,6 +21,7 @@ from screens.UserSettings import UserSettings
 from screens.AddWorkout import AddWorkoutScreen
 from screens.LoadingScreen import LoadingScreen
 from sources.User import User
+from datetime import date
 
 # This import is used to establish DNS server connections with Android and iOS devices.
 import dns.resolver
@@ -30,7 +31,6 @@ dns.resolver.default_resolver.nameservers=['8.8.8.8'] # this is a google public 
 from pymongo import MongoClient, errors
 import motor.motor_asyncio
 import asyncio
-import datetime
 
 # use a try-except indentation to catch MongoClient() errors
 try:
@@ -60,8 +60,8 @@ class App(MDApp):
         email = '', 
         goals = '', 
         level = '', 
-        weight = 0,
-        height = 0)
+        weight = '',
+        height = '')
     user_is_making_new_account = True
     
     def build(self):
